@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal of Investment Philosophy</title>
+<meta name="description" content="A recurring publication distilling lessons from history's greatest investors into practical, usable frameworks.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Journal of Investment Philosophy">
+<meta property="og:description" content="A recurring publication distilling lessons from history's greatest investors into practical, usable frameworks.">
+<meta property="og:image" content="https://isaacnicas.github.io/investment-journal/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://isaacnicas.github.io/investment-journal/">
+<meta property="og:site_name" content="The Journal of Investment Philosophy">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Journal of Investment Philosophy">
+<meta name="twitter:description" content="A recurring publication distilling lessons from history's greatest investors into practical, usable frameworks.">
+<meta name="twitter:image" content="https://isaacnicas.github.io/investment-journal/share-card.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0F1410;
+    --ink-soft:#171D17;
+    --ink-card:#1B221C;
+    --parchment:#F2EDE1;
+    --parchment-dim:#C9C4B6;
+    --gold:#C9A24B;
+    --gold-soft:#A98839;
+    --sage:#8B9D8F;
+    --rust:#B5503D;
+    --hairline:rgba(242,237,225,0.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:'Source Serif 4',serif;
+    line-height:1.6;
+    min-height:100vh;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 28px;}
+
+  header.masthead{
+    padding:80px 28px 48px;
+    text-align:center;
+    border-bottom:1px solid var(--hairline);
+  }
+  .eyebrow{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:16px;
+    color:var(--sage);
+    margin-bottom:18px;
+  }
+  h1.title{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(40px,8vw,68px);
+    line-height:1.05;
+    color:var(--parchment);
+    margin-bottom:22px;
+  }
+  .gloss{
+    font-family:'Source Serif 4',serif;
+    font-size:17px;
+    color:var(--parchment-dim);
+    max-width:480px;
+    margin:0 auto;
+  }
+
+  .issues{
+    padding:56px 0 80px;
+  }
+  .issue-card{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+    background:var(--ink-card);
+    border:1px solid var(--hairline);
+    border-radius:2px;
+    padding:32px 36px;
+    margin-bottom:20px;
+    transition:border-color 0.2s ease, transform 0.2s ease;
+  }
+  .issue-card:hover{
+    border-color:var(--gold-soft);
+    transform:translateY(-2px);
+  }
+  .issue-vol{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.08em;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .issue-title{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:28px;
+    color:var(--parchment);
+    margin-bottom:10px;
+  }
+  .issue-desc{
+    font-size:15.5px;
+    color:var(--parchment-dim);
+  }
+  .issue-meta{
+    margin-top:16px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--sage);
+  }
+
+  .coming-soon{
+    border-style:dashed;
+    opacity:0.55;
+    cursor:default;
+  }
+  .coming-soon:hover{
+    border-color:var(--hairline);
+    transform:none;
+  }
+
+  footer{
+    border-top:1px solid var(--hairline);
+    padding:32px 28px 48px;
+    text-align:center;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--parchment-dim);
+  }
+
+  @media (max-width:560px){
+    header.masthead{padding:56px 22px 36px;}
+    .issue-card{padding:26px 24px;}
+    .issue-title{font-size:23px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">A Recurring Publication</div>
+  <h1 class="title">The Journal of<br>Investment Philosophy</h1>
+  <p class="gloss">An investors' guide to telling signal from noise. A toolkit for building better judgment, one volume at a time.</p>
+</header>
+
+<div class="wrap">
+  <div class="issues">
+    <a class="issue-card" href="vol-01.html">
+      <div class="issue-vol">VOL. 01</div>
+      <div class="issue-title">Hidden in Plain Sight</div>
+      <p class="issue-desc">Where great investments actually come from — before anyone agrees they were obvious. Six legendary investors, eight sources of change, and one usable framework for finding, sizing, and holding an idea.</p>
+      <div class="issue-meta">Read Volume 01 →</div>
+    </a>
+
+    <div class="issue-card coming-soon">
+      <div class="issue-vol">VOL. 02</div>
+      <div class="issue-title">Eggs, Baskets, and Other Casualties</div>
+      <p class="issue-desc">Diversification vs. concentration — and why both camps think the other one is gambling.</p>
+      <div class="issue-meta">Coming soon</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Prepared by Isaac Nicas. Not financial advice. Just philosophy that occasionally makes you money.
+</footer>
+
+</body>
+</html>
