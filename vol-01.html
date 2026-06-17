@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal of Investment Philosophy — Vol. 1: Hidden in Plain Sight</title>
+<meta name="description" content="Where great investments actually come from — before anyone agrees they were obvious. Six legendary investors, eight sources of change, one usable framework.">
+
+<!-- Open Graph (LinkedIn, Facebook, Blossom) -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hidden in Plain Sight — The Journal of Investment Philosophy, Vol. 01">
+<meta property="og:description" content="Where great investments actually come from — before anyone agrees they were obvious. Six legendary investors, eight sources of change, one usable framework.">
+<meta property="og:image" content="https://isaacnicas.github.io/investment-journal/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://isaacnicas.github.io/investment-journal/vol-01.html">
+<meta property="og:site_name" content="The Journal of Investment Philosophy">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hidden in Plain Sight — The Journal of Investment Philosophy, Vol. 01">
+<meta name="twitter:description" content="Where great investments actually come from — before anyone agrees they were obvious.">
+<meta name="twitter:image" content="https://isaacnicas.github.io/investment-journal/share-card.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1410;
+    --ink-soft:#171D17;
+    --ink-card:#1B221C;
+    --parchment:#F2EDE1;
+    --parchment-dim:#C9C4B6;
+    --gold:#C9A24B;
+    --gold-soft:#A98839;
+    --sage:#8B9D8F;
+    --rust:#B5503D;
+    --hairline:rgba(242,237,225,0.14);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:'Source Serif 4', serif;
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--gold);text-decoration:none;}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  /* ============ TICKER ============ */
+  .ticker-outer{
+    background:var(--ink-soft);
+    border-bottom:1px solid var(--hairline);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:10px 0;
+  }
+  .ticker-track{
+    display:inline-block;
+    white-space:nowrap;
+    animation:scroll-left 38s linear infinite;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    color:var(--parchment-dim);
+  }
+  .ticker-track span{margin-right:36px;}
+  .ticker-track .name{color:var(--gold);font-weight:600;}
+  @keyframes scroll-left{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{animation:none;}
+  }
+
+  /* ============ MASTHEAD ============ */
+  .masthead{
+    padding:64px 28px 40px;
+    text-align:center;
+    border-bottom:1px solid var(--hairline);
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:16px;
+    letter-spacing:0.01em;
+    color:var(--sage);
+    margin-bottom:18px;
+  }
+  .running-head{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:16px;
+    color:var(--sage);
+    display:inline-block;
+    margin-bottom:8px;
+  }
+  .masthead h1.title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(40px,7vw,68px);
+    line-height:1.0;
+    color:var(--parchment);
+    letter-spacing:-0.01em;
+  }
+  .masthead .rule-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin:22px 0 14px;
+  }
+  .masthead .rule-row .line{height:1px;width:48px;background:var(--gold-soft);}
+  .vol-tag{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:15px;
+    color:var(--gold);
+  }
+  .byline{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--sage);
+    margin-top:10px;
+  }
+  .masthead .subhead{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(20px,3vw,26px);
+    color:var(--parchment-dim);
+    max-width:520px;
+    margin:8px auto 0;
+  }
+
+  .masthead .gloss{
+    font-family:'Source Serif 4', serif;
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--sage);
+    max-width:440px;
+    margin:16px auto 0;
+    line-height:1.5;
+  }
+  .masthead .gloss strong{
+    font-family:'Fraunces',serif;
+    font-style:normal;
+    font-weight:600;
+    color:var(--gold);
+  }
+
+  /* ============ ARTICLE BODY ============ */
+  article{padding:56px 0 40px;}
+
+  p{margin-bottom:22px;color:var(--parchment);}
+  p.lede{
+    font-size:21px;
+    color:var(--parchment);
+  }
+  p.lede::first-letter{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:3.6em;
+    line-height:0.78;
+    float:left;
+    padding-right:10px;
+    padding-top:4px;
+    color:var(--gold);
+  }
+
+  h2{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(26px,4vw,32px);
+    color:var(--parchment);
+    margin:54px 0 22px;
+    letter-spacing:-0.005em;
+  }
+  .subhead-h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--parchment);
+    margin:36px 0 16px;
+  }
+  .hr{
+    border:none;
+    height:1px;
+    background:var(--hairline);
+    margin:48px 0;
+  }
+
+  /* ============ DINNER TABLE STRIP ============ */
+  .roster{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--hairline);
+    margin:28px 0 36px;
+    border:1px solid var(--hairline);
+  }
+  .roster .seat{
+    background:var(--ink-soft);
+    padding:16px 14px;
+    text-align:center;
+  }
+  .roster .seat .who{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:15px;
+    color:var(--parchment);
+  }
+  .roster .seat .what{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:12.5px;
+    color:var(--sage);
+    margin-top:4px;
+  }
+
+  /* ============ PULLQUOTE ============ */
+  blockquote{
+    margin:40px 0;
+    padding:4px 0 4px 28px;
+    border-left:2px solid var(--gold);
+  }
+  blockquote p{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:24px;
+    line-height:1.4;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+  blockquote cite{
+    font-family:'Source Serif 4',serif;
+    font-style:normal;
+    font-size:14px;
+    color:var(--sage);
+  }
+  blockquote cite::before{content:"— ";}
+
+  /* ============ SCOREBOARD/GAME CALLOUT ============ */
+  .callout{
+    background:var(--ink-card);
+    border:1px solid var(--hairline);
+    border-radius:2px;
+    padding:26px 28px;
+    margin:32px 0;
+  }
+  .callout .tag{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:15px;
+    color:var(--rust);
+    margin-bottom:10px;
+    display:block;
+  }
+  .callout.good{border-color:var(--gold-soft);}
+  .callout.good .tag{color:var(--gold);}
+  .callout p{margin-bottom:0;color:var(--parchment);font-size:17px;}
+  .callout p + p{margin-top:14px;}
+
+  /* ============ EIGHT SOURCES — SPECIMEN CARDS ============ */
+  .specimens{display:flex;flex-direction:column;gap:1px;margin:32px 0;background:var(--hairline);border:1px solid var(--hairline);}
+  .specimen{
+    background:var(--ink-soft);
+    padding:24px 26px;
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:20px;
+    align-items:start;
+  }
+  .specimen .num{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:22px;
+    color:var(--gold-soft);
+    padding-top:1px;
+  }
+  .specimen h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:18.5px;
+    color:var(--parchment);
+    margin-bottom:8px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:10px;
+  }
+  .specimen h3 .title-text{display:inline;}
+  .specimen h3 .who{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:14.5px;
+    color:var(--sage);
+  }
+  .specimen p{
+    font-size:16px;
+    color:var(--parchment-dim);
+    margin-bottom:0;
+  }
+
+  /* ============ FRAMEWORK LEDGER ============ */
+  .ledger{
+    background:var(--ink-card);
+    border:1px solid var(--gold-soft);
+    margin:36px 0;
+    padding:6px 0;
+  }
+  .ledger-head{
+    padding:18px 28px 14px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .ledger-head .eyebrow{margin-bottom:6px;}
+  .ledger-head h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:22px;
+    color:var(--parchment);
+  }
+  .ledger-rows{padding:8px 0;}
+  .ledger-row{
+    display:grid;
+    grid-template-columns:34px 1fr;
+    gap:16px;
+    padding:14px 28px;
+    align-items:baseline;
+  }
+  .ledger-row + .ledger-row{border-top:1px dashed var(--hairline);}
+  .ledger-row .step-no{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--gold);
+    font-size:15px;
+  }
+  .ledger-row .step-text{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:17px;
+    color:var(--parchment);
+  }
+  .ledger-row .step-text small{
+    display:block;
+    font-family:'Source Serif 4',serif;
+    font-weight:400;
+    font-style:italic;
+    font-size:14.5px;
+    color:var(--parchment-dim);
+    margin-top:3px;
+  }
+
+  /* ============ TAKEAWAYS ============ */
+  .takeaways{
+    margin:28px 0;
+    padding:0;
+    list-style:none;
+    counter-reset:tk;
+  }
+  .takeaways li{
+    counter-increment:tk;
+    position:relative;
+    padding:14px 0 14px 36px;
+    font-size:17px;
+    color:var(--parchment);
+    border-bottom:1px solid var(--hairline);
+  }
+  .takeaways li:first-child{border-top:1px solid var(--hairline);}
+  .takeaways li::before{
+    content:counter(tk);
+    position:absolute;
+    left:0;
+    top:14px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:14px;
+    color:var(--sage);
+  }
+
+  /* ============ ACTION BOX ============ */
+  .action-box{
+    background:var(--sage);
+    color:var(--ink);
+    padding:30px 30px;
+    margin:36px 0;
+    border-radius:2px;
+  }
+  .action-box .tag{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:15px;
+    color:var(--ink);
+    opacity:0.75;
+    display:block;
+    margin-bottom:10px;
+  }
+  .action-box p{color:var(--ink);margin-bottom:0;font-size:17px;}
+
+  /* ============ NEXT VOLUME ============ */
+  .next-vol{
+    margin:48px 0 0;
+    padding:26px 28px;
+    border:1px solid var(--hairline);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+  .next-vol .label{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:15px;
+    color:var(--gold);
+    margin-bottom:6px;
+    display:block;
+  }
+  .next-vol h4{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:19px;
+    color:var(--parchment);
+  }
+  .next-vol .sub{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--parchment-dim);
+    margin-top:4px;
+  }
+  .next-vol .arrow{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--sage);
+    font-size:22px;
+  }
+
+  /* ============ CLOSING LINE ============ */
+  .closer{
+    text-align:center;
+    padding:54px 0 20px;
+  }
+  .closer p{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:23px;
+    line-height:1.45;
+    color:var(--gold);
+    max-width:560px;
+    margin:0 auto;
+  }
+
+  /* ============ FOOTER ============ */
+  footer{
+    border-top:1px solid var(--hairline);
+    padding:28px 0 50px;
+    text-align:center;
+  }
+  footer p{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:14.5px;
+    color:var(--parchment-dim);
+    margin-bottom:0;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:560px){
+    body{font-size:16.5px;}
+    .roster{grid-template-columns:repeat(2,1fr);}
+    .specimen{grid-template-columns:44px 1fr;gap:14px;padding:20px 18px;}
+    blockquote p{font-size:20px;}
+    .ledger-row{grid-template-columns:26px 1fr;padding:14px 18px;}
+    .next-vol{flex-direction:column;align-items:flex-start;}
+    .horizon-controls{flex-wrap:wrap;}
+    .horizon-controls input[type="range"]{order:3;flex-basis:100%;margin-top:10px;}
+    .horizon-readout{order:4;flex-basis:100%;text-align:left;margin-top:6px;}
+  }
+
+  /* ============ READING RAIL ============ */
+  .rail{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:var(--hairline);
+    z-index:40;
+  }
+  .rail-fill{
+    width:100%;
+    background:var(--gold);
+    height:0%;
+    transition:height 0.1s linear;
+  }
+  .rail-stops{
+    position:fixed;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    z-index:41;
+  }
+  .rail-stop{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--ink-card);
+    border:1px solid var(--sage);
+    transition:background 0.3s, border-color 0.3s, transform 0.3s;
+    cursor:pointer;
+  }
+  .rail-stop.active{
+    background:var(--gold);
+    border-color:var(--gold);
+    transform:scale(1.3);
+  }
+  .rail-stop-label{
+    position:absolute;
+    left:18px;
+    top:-4px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--parchment-dim);
+    white-space:nowrap;
+    opacity:0;
+    transform:translateX(-4px);
+    transition:opacity 0.2s, transform 0.2s;
+    pointer-events:none;
+  }
+  .rail-stop:hover .rail-stop-label{opacity:1;transform:translateX(0);}
+  @media (max-width:700px){
+    .rail-stops{display:none;}
+  }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+  }
+
+  /* ============ DINNER TABLE FLIP ============ */
+  .roster .seat{
+    perspective:600px;
+    cursor:pointer;
+    padding:0;
+    background:transparent;
+  }
+  .seat-inner{
+    position:relative;
+    width:100%;
+    min-height:84px;
+    transition:transform 0.55s cubic-bezier(0.4,0.1,0.2,1);
+    transform-style:preserve-3d;
+  }
+  .roster .seat.flipped .seat-inner{transform:rotateY(180deg);}
+  .seat-face{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    background:var(--ink-soft);
+    padding:16px 12px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  .seat-face.back{
+    transform:rotateY(180deg);
+    background:var(--ink-card);
+  }
+  .seat-face .quip{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:13px;
+    color:var(--gold);
+    text-align:center;
+    line-height:1.35;
+  }
+  .seat-hint{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:10px;
+    color:var(--sage);
+    opacity:0.7;
+    margin-top:6px;
+  }
+
+  /* ============ SPECIMEN EXPAND ============ */
+  .specimen{
+    cursor:pointer;
+    transition:background 0.2s, border-color 0.2s;
+  }
+  .specimen:hover{background:var(--ink-card);}
+  .specimen:hover .hint{color:var(--gold);}
+  .specimen .expand-body{
+    grid-column:1 / -1;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+  }
+  .specimen.open .expand-body{max-height:200px;}
+  .specimen .expand-body .inner{
+    padding-top:14px;
+    margin-top:14px;
+    border-top:1px solid var(--hairline);
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--parchment-dim);
+  }
+  .specimen .hint{
+    display:block;
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:12.5px;
+    color:var(--sage);
+    margin-top:10px;
+    transition:color 0.2s;
+  }
+  .specimen.open .hint{display:none;}
+  .specimen .chev{
+    font-family:'Fraunces',serif;
+    color:var(--gold);
+    font-size:20px;
+    line-height:1;
+    transition:transform 0.3s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    border:1px solid var(--gold-soft);
+    flex-shrink:0;
+  }
+  .specimen.open .chev{transform:rotate(180deg);}
+
+  /* ============ VALUATION: COMP RULER ============ */
+  .comp-box{
+    margin:28px 0;
+    background:var(--ink-soft);
+    border:1px solid var(--hairline);
+    padding:24px 26px 18px;
+  }
+  .comp-box svg{display:block;width:100%;height:auto;}
+  .comp-caption{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--sage);
+    text-align:center;
+    margin-top:12px;
+  }
+  @keyframes comp-rise{
+    from{opacity:0;transform:scaleY(0);}
+    to{opacity:1;transform:scaleY(1);}
+  }
+  .comp-bar{
+    animation:comp-rise 0.6s ease-out backwards;
+    transform-origin:bottom;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .comp-bar{animation:none;}
+  }
+
+  /* ============ VALUATION: MOAT GAUGE ============ */
+  .moat-box{
+    margin:28px 0;
+    background:var(--ink-card);
+    border:1px solid var(--hairline);
+    padding:24px 26px 20px;
+  }
+  .moat-tag{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:15px;
+    color:var(--rust);
+    display:block;
+    margin-bottom:14px;
+  }
+  .moat-row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin:10px 0;
+  }
+  .moat-label{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--parchment-dim);
+    width:140px;
+    flex-shrink:0;
+  }
+  .moat-track{
+    flex:1;
+    height:8px;
+    background:var(--hairline);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .moat-fill{
+    height:100%;
+    background:var(--gold);
+    border-radius:4px;
+  }
+  .moat-note{
+    margin-top:14px;
+    font-size:15px;
+    color:var(--parchment-dim);
+  }
+
+  /* ============ GUT/MATH SLIDER ============ */
+  .spectrum{
+    margin:32px 0;
+    background:var(--ink-card);
+    border:1px solid var(--hairline);
+    border-radius:2px;
+    padding:26px 28px 22px;
+  }
+  .spectrum-pretext{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:14.5px;
+    color:var(--parchment-dim);
+    margin-bottom:18px;
+  }
+  .spectrum-labels{
+    display:flex;
+    justify-content:space-between;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--sage);
+    margin-bottom:14px;
+  }
+  .spectrum-track-wrap{position:relative;padding:14px 0;}
+  .spectrum input[type="range"]{
+    width:100%;
+    -webkit-appearance:none;
+    appearance:none;
+    height:2px;
+    padding:14px 0;
+    box-sizing:content-box;
+    background:var(--hairline);
+    outline:none;
+    margin:0;
+    touch-action:pan-y;
+  }
+  .spectrum input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--gold);
+    border:2px solid var(--ink-card);
+    cursor:pointer;
+    box-shadow:0 0 0 1px var(--gold-soft);
+  }
+  .spectrum input[type="range"]::-moz-range-thumb{
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:var(--gold);
+    border:2px solid var(--ink-card);
+    cursor:pointer;
+  }
+  .spectrum-readout{
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px solid var(--hairline);
+  }
+  .spectrum-readout .pos-name{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:17px;
+    color:var(--parchment);
+    margin-bottom:6px;
+  }
+  .spectrum-readout p{
+    font-size:15.5px;
+    color:var(--parchment-dim);
+    margin-bottom:0;
+  }
+
+  /* ============ ANIMATED SIGNAL ============ */
+  .signal-box{
+    margin:28px 0;
+    background:var(--ink-soft);
+    border:1px solid var(--hairline);
+    padding:20px 22px 14px;
+  }
+  .signal-box svg{display:block;width:100%;height:auto;}
+  .signal-caption{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--sage);
+    text-align:center;
+    margin-top:10px;
+  }
+  @keyframes dash-flow{
+    to{stroke-dashoffset:-40;}
+  }
+  .signal-line-noise{
+    stroke-dasharray:1 0;
+  }
+  .signal-line-change{
+    stroke-dasharray:6 4;
+    animation:dash-flow 2.4s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .signal-line-change{animation:none;}
+  }
+  .signal-dot{
+    animation:pulse-dot 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse-dot{
+    0%,100%{opacity:1;r:5;}
+    50%{opacity:0.55;r:7;}
+  }
+
+  /* ============ INFLATION CHART ============ */
+  .chart-box{
+    margin:28px 0;
+    background:var(--ink-soft);
+    border:1px solid var(--hairline);
+    padding:22px 24px 16px;
+  }
+  .chart-box svg{display:block;width:100%;height:auto;}
+  .chart-caption{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--sage);
+    text-align:center;
+    margin-top:8px;
+  }
+  .chart-bar{
+    transition:opacity 0.3s;
+  }
+  @keyframes bar-rise{
+    from{transform:scaleY(0);}
+    to{transform:scaleY(1);}
+  }
+  .chart-bar rect{
+    transform-origin:bottom;
+    animation:bar-rise 0.8s ease-out backwards;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .chart-bar rect{animation:none;}
+  }
+
+  /* ============ PASSIVE VS ACTIVE INTERACTIVE CHART ============ */
+  .horizon-box{
+    margin:28px 0;
+    background:var(--ink-soft);
+    border:1px solid var(--hairline);
+    padding:24px 26px 20px;
+  }
+  .horizon-box svg{display:block;width:100%;height:auto;}
+  .horizon-controls{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-top:16px;
+  }
+  .horizon-controls label{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--sage);
+    flex-shrink:0;
+  }
+  .horizon-controls input[type="range"]{
+    flex:1;
+    -webkit-appearance:none;
+    appearance:none;
+    height:2px;
+    padding:14px 0;
+    box-sizing:content-box;
+    background:var(--hairline);
+    outline:none;
+    touch-action:pan-y;
+  }
+  .horizon-controls input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:var(--gold);
+    border:2px solid var(--ink-soft);
+    cursor:pointer;
+  }
+  .horizon-controls input[type="range"]::-moz-range-thumb{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:var(--gold);
+    border:2px solid var(--ink-soft);
+    cursor:pointer;
+  }
+  .horizon-readout{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:15px;
+    color:var(--parchment);
+    min-width:96px;
+    text-align:right;
+    flex-shrink:0;
+  }
+  .horizon-caption{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--sage);
+    text-align:center;
+    margin-top:14px;
+  }
+
+  /* ============ SHRINKING POOL VISUAL ============ */
+  .pool-box{
+    margin:28px 0;
+    background:var(--ink-card);
+    border:1px solid var(--hairline);
+    padding:24px 26px 18px;
+  }
+  .pool-box svg{display:block;width:100%;height:auto;}
+  .pool-caption{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--sage);
+    text-align:center;
+    margin-top:10px;
+  }
+  @keyframes dot-fade{
+    from{opacity:0;transform:scale(0.4);}
+    to{opacity:1;transform:scale(1);}
+  }
+  .pool-dot{
+    animation:dot-fade 0.5s ease-out backwards;
+    transform-origin:center;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pool-dot{animation:none;}
+  }
+
+  /* ============ EDGE / EMH BOX ============ */
+  .edge-box{
+    margin:28px 0;
+    background:var(--ink-card);
+    border:1px solid var(--rust);
+    padding:24px 26px;
+  }
+  .edge-box.counter{border-color:var(--gold-soft);}
+  .edge-box.counter .tag{color:var(--gold);}
+  .edge-box .tag{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:15px;
+    color:var(--rust);
+    margin-bottom:10px;
+    display:block;
+  }
+  .edge-box p{margin-bottom:0;color:var(--parchment);font-size:17px;}
+  .edge-box p + p{margin-top:14px;}
+  @media (prefers-reduced-motion: reduce){
+    .signal-dot{animation:none;}
+  }
+
+  /* ============ MASTHEAD TITLE ANIMATION ============ */
+  .masthead h1.title .word{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(14px);
+    animation:rise-in 0.7s ease forwards;
+  }
+  .masthead h1.title .word:nth-child(1){animation-delay:0.05s;}
+  .masthead h1.title .word:nth-child(2){animation-delay:0.18s;}
+  @keyframes rise-in{
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .masthead h1.title .word{animation:none;opacity:1;transform:none;}
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<div class="rail"><div class="rail-fill" id="railFill"></div></div>
+<div class="rail-stops" id="railStops">
+  <div class="rail-stop" data-target="stage-1"><span class="rail-stop-label">Why plant the tree</span></div>
+  <div class="rail-stop" data-target="stage-2"><span class="rail-stop-label">Where ideas come from</span></div>
+  <div class="rail-stop" data-target="stage-3"><span class="rail-stop-label">What counts as low</span></div>
+  <div class="rail-stop" data-target="stage-4"><span class="rail-stop-label">Gut, math, or both</span></div>
+  <div class="rail-stop" data-target="stage-5"><span class="rail-stop-label">Holding on, letting go</span></div>
+  <div class="rail-stop" data-target="stage-6"><span class="rail-stop-label">The framework</span></div>
+</div>
+
+<div class="ticker-outer">
+  <div class="ticker-track" aria-hidden="true">
+    <span><span class="name">BUFFETT</span> — "The stock market is a device for transferring money from the impatient to the patient."</span>
+    <span><span class="name">DRUCKENMILLER</span> — "When you have tremendous conviction on a trade, you have to go for the jugular."</span>
+    <span><span class="name">WOOD</span> — "Innovation solves problems."</span>
+    <span><span class="name">LYNCH</span> — "Invest in what you know."</span>
+    <span><span class="name">SIMONS</span> — "Past performance is the best predictor of success."</span>
+    <span><span class="name">MARKS</span> — "Risk means more things can happen than will happen."</span>
+    <span><span class="name">MUNGER</span> — "Invert, always invert."</span>
+    <span><span class="name">BUFFETT</span> — "The stock market is a device for transferring money from the impatient to the patient."</span>
+    <span><span class="name">DRUCKENMILLER</span> — "When you have tremendous conviction on a trade, you have to go for the jugular."</span>
+    <span><span class="name">WOOD</span> — "Innovation solves problems."</span>
+    <span><span class="name">LYNCH</span> — "Invest in what you know."</span>
+    <span><span class="name">SIMONS</span> — "Past performance is the best predictor of success."</span>
+    <span><span class="name">MARKS</span> — "Risk means more things can happen than will happen."</span>
+    <span><span class="name">MUNGER</span> — "Invert, always invert."</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="eyebrow">The Journal of Investment Philosophy</div>
+  <h1 class="title"><span class="word">Hidden in</span><br><span class="word">Plain Sight</span></h1>
+  <div class="rule-row"><div class="line"></div><span class="vol-tag">VOL. 01</span><div class="line"></div></div>
+  <p class="byline">Prepared by Isaac Nicas</p>
+  <p class="subhead">Where great investments actually come from — before anyone agrees they were obvious.</p>
+  <p class="gloss">Lessons from history's greatest investors, distilled into practical wisdom.</p>
+</header>
+
+<div class="wrap">
+<article>
+
+  <div class="reveal">
+  <p class="lede">Buy low, sell high. Great advice, if you also have a time machine.</p>
+
+  <p>It's the first thing anyone learns about investing, and the last thing anyone actually masters. Nobody tells you how to know what "low" is until after it's already gone "high." So if that's not a strategy, what is?</p>
+
+  <p>Imagine Buffett, Cathie Wood, Peter Lynch, Jim Simons, Howard Marks, and Stanley Druckenmiller at the same dinner table. Within five minutes they'd disagree about almost everything.</p>
+
+  <div class="roster" id="roster">
+    <div class="seat" data-seat>
+      <div class="seat-inner">
+        <div class="seat-face front"><div class="who">Buffett</div><div class="what">Boring, forever</div></div>
+        <div class="seat-face back"><div class="quip">Time in the market, not timing it.</div></div>
+      </div>
+      <div class="seat-hint">tap</div>
+    </div>
+    <div class="seat" data-seat>
+      <div class="seat-inner">
+        <div class="seat-face front"><div class="who">Wood</div><div class="what">Unproven, early</div></div>
+        <div class="seat-face back"><div class="quip">The future doesn't wait for consensus.</div></div>
+      </div>
+      <div class="seat-hint">tap</div>
+    </div>
+    <div class="seat" data-seat>
+      <div class="seat-inner">
+        <div class="seat-face front"><div class="who">Lynch</div><div class="what">Whatever's at the mall</div></div>
+        <div class="seat-face back"><div class="quip">Know what you own, and why you own it.</div></div>
+      </div>
+      <div class="seat-hint">tap</div>
+    </div>
+    <div class="seat" data-seat>
+      <div class="seat-inner">
+        <div class="seat-face front"><div class="who">Simons</div><div class="what">Invisible patterns</div></div>
+        <div class="seat-face back"><div class="quip">Best decisions come from data and evidence, not gut feelings.</div></div>
+      </div>
+      <div class="seat-hint">tap</div>
+    </div>
+    <div class="seat" data-seat>
+      <div class="seat-inner">
+        <div class="seat-face front"><div class="who">Marks</div><div class="what">Misunderstood, cheap</div></div>
+        <div class="seat-face back"><div class="quip">You can't predict, you can prepare.</div></div>
+      </div>
+      <div class="seat-hint">tap</div>
+    </div>
+    <div class="seat" data-seat>
+      <div class="seat-inner">
+        <div class="seat-face front"><div class="who">Druckenmiller</div><div class="what">Central bank mood</div></div>
+        <div class="seat-face back"><div class="quip">Preserve capital first, profit second.</div></div>
+      </div>
+      <div class="seat-hint">tap</div>
+    </div>
+  </div>
+
+  <p>Buffett himself has a name for what this dinner table actually is.</p>
+
+  <blockquote>
+    <p>"The best thing I did was to choose the right heroes."</p>
+    <cite>Warren Buffett</cite>
+  </blockquote>
+
+  <p>Six wildly different toolkits — and yet all six are legendary. That's not a coincidence to shrug at. It's a clue. Underneath the different styles, every one of them is a professional noticer of <strong>change</strong>. This series is built on doing exactly what Buffett did, just with six heroes instead of one: stitching their different mechanisms into one usable system. Not chasing a single guru's playbook, but building an all-star team out of investors who'd probably never agree to be on the same team. Nobody passes the ball. Everybody still wins.</p>
+  </div>
+
+  <hr class="hr">
+
+  <div id="stage-1" class="reveal">
+  <span class="running-head">Stage One</span>
+  <h2>Why Plant the Tree at All</h2>
+
+  <p>Before any of this, there's a simpler question: why invest at all? It seems obvious until you watch how many people never start, or start ten years later than they should have.</p>
+
+  <blockquote>
+    <p>"The best time to plant a tree was 20 years ago. The second best time is now."</p>
+    <cite>Chinese proverb</cite>
+  </blockquote>
+
+  <p>That's the generational case. There's a more immediate one sitting right under it: cash that just sits there quietly loses ground every year, whether you notice or not.</p>
+
+  <div class="chart-box">
+    <svg viewBox="0 0 700 220" role="img" aria-label="Illustrative chart showing $100 losing purchasing power over 20 years at a 3 percent average inflation rate">
+      <title>Purchasing power of $100 over 20 years at 3% average inflation</title>
+      <desc>A bar chart showing $100 declining to roughly $86 after 5 years, $74 after 10 years, $64 after 15 years, and $55 after 20 years, illustrating the effect of compounding inflation on idle cash.</desc>
+      <line x1="40" y1="170" x2="660" y2="170" stroke="var(--hairline)" stroke-width="1"/>
+      <g class="chart-bar" style="animation-delay:0s">
+        <rect x="60" y="50" width="80" height="120" fill="var(--gold)"/>
+        <text x="100" y="40" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="14" fill="var(--parchment)">$100</text>
+        <text x="100" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">today</text>
+      </g>
+      <g class="chart-bar" style="animation-delay:0.1s">
+        <rect x="195" y="67" width="80" height="103" fill="var(--gold-soft)" opacity="0.85"/>
+        <text x="235" y="57" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="14" fill="var(--parchment)">$86</text>
+        <text x="235" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">5 years</text>
+      </g>
+      <g class="chart-bar" style="animation-delay:0.2s">
+        <rect x="330" y="81" width="80" height="89" fill="var(--sage)" opacity="0.8"/>
+        <text x="370" y="71" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="14" fill="var(--parchment)">$74</text>
+        <text x="370" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">10 years</text>
+      </g>
+      <g class="chart-bar" style="animation-delay:0.3s">
+        <rect x="465" y="93" width="80" height="77" fill="var(--sage)" opacity="0.6"/>
+        <text x="505" y="83" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="14" fill="var(--parchment)">$64</text>
+        <text x="505" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">15 years</text>
+      </g>
+      <g class="chart-bar" style="animation-delay:0.4s">
+        <rect x="600" y="103" width="80" height="67" fill="var(--rust)" opacity="0.75"/>
+        <text x="640" y="93" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="14" fill="var(--parchment)">$55</text>
+        <text x="640" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">20 years</text>
+      </g>
+    </svg>
+    <p class="chart-caption">Illustrative, at a 3% average annual inflation rate. The bills in the drawer don't change. What they buy does.</p>
+  </div>
+
+  <p>That's the quiet argument for investing at all: doing nothing isn't neutral, it's a slowly losing position. But that just establishes the floor. It doesn't answer the harder question — the one Howard Marks essentially poses in his own work.</p>
+
+  <div class="edge-box">
+    <span class="tag">The Marks Challenge</span>
+    <p>Tens of thousands of analysts and algorithms are pricing these same markets for a living, every day. Marks has put the logic plainly: if enough rational, well-informed people are evaluating an asset, its price shouldn't drift far from what it's worth. Sit with two questions before reading any further.</p>
+    <p><strong>If markets are this efficient, and professionals with better resources than you are already in them — why bother investing at all? And if you do: what's actually your edge?</strong> If you can't answer that second one honestly, you aren't investing — you're just donating to Wall Street.</p>
+  </div>
+
+  <p>Here's why the first question doesn't end the conversation. Markets aren't as efficient as the theory wants, and two different investors spent careers proving it in two different ways.</p>
+
+  <div class="edge-box counter">
+    <span class="tag">The Counter-Case</span>
+    <p>George Soros built a fortune on the simple observation that prices don't just reflect reality — they're also shaped by what investors feel and believe, which then changes the reality those beliefs were supposed to be reflecting. Fear and herd behavior aren't noise around the price. Sometimes they're the whole story.</p>
+    <p>Even Eugene Fama's own data turned against pure efficiency — and Fama (the father of the Efficient Market Hypothesis) isn't exactly a hostile witness here. Stocks that have been rising tend to keep rising for months at a time, a pattern called momentum, and it's persisted for decades despite everyone knowing about it. Fama himself once called it the biggest embarrassment to his own theory.</p>
+    <p>Momentum is just one entry in a longer list. Researchers have identified a whole family of these statistical patterns, quietly called "factors," that quantitative funds now build entire strategies around — more on that in a future issue.</p>
+  </div>
+
+  <p>So the market is efficient enough that lazy analysis won't beat it, and inefficient enough that careful work still can. That's not a loophole. That's the entire reason this publication exists.</p>
+
+  <p>Your edge isn't beating the market at its own best-covered game. It's choosing where the game is still open — and staying honest about why you, specifically, are looking there.</p>
+  </div>
+
+  <hr class="hr">
+
+  <div id="stage-2" class="reveal">
+  <span class="running-head">Stage Two</span>
+  <h2>Where Ideas Actually Come From</h2>
+
+  <p>Most people search for tips. A friend mentions a ticker, a headline screams a number, and the search ends before it started. The trouble is a tip is a conclusion someone else already reached — by the time it gets to you, a few thousand other people have it too.</p>
+
+  <div class="signal-box">
+    <svg viewBox="0 0 700 140" aria-hidden="true">
+      <line x1="20" y1="100" x2="680" y2="100" stroke="var(--hairline)" stroke-width="1"/>
+      <path class="signal-line-noise" d="M20,100 Q40,80 60,105 T100,95 T140,108 T180,92 T220,103 T260,97 T300,106 T340,90 T380,100 T420,94 T460,107 T500,98 T540,103 T580,95 T620,100 T660,99" fill="none" stroke="var(--sage)" stroke-width="1.4" opacity="0.55"/>
+      <path class="signal-line-change" d="M20,100 Q150,98 300,80 T480,40 T660,20" fill="none" stroke="var(--gold)" stroke-width="2.2"/>
+      <circle class="signal-dot" cx="480" cy="40" r="5" fill="var(--gold)"/>
+      <text x="20" y="122" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">noise — the scoreboard</text>
+      <text x="500" y="35" font-family="Fraunces, serif" font-style="italic" font-size="12" fill="var(--gold)">change, while it's still quiet</text>
+    </svg>
+    <p class="signal-caption">The gold line is what a sharp investor is watching. The grey one is what everyone else calls "the market."</p>
+  </div>
+
+  <div class="callout">
+    <span class="tag">The Scoreboard Problem</span>
+    <p>Most investors are watching the scoreboard. The best investors are watching the game.</p>
+    <p>The scoreboard only updates after something's already happened on the field — and by the time it changes, everyone in the stadium knows. The game is where the information actually lives, and almost nobody in the stands is watching it.</p>
+  </div>
+
+  <p>Great investors search for <em>developments</em> instead of tips. Change tends to show up in a handful of recognizable places — call them the eight sources.</p>
+
+  <div class="specimens" id="specimens">
+    <div class="specimen" data-specimen>
+      <div class="num">1.</div>
+      <div>
+        <h3><span class="title-text">Future Change <span class="who">— Cathie Wood</span></span><span class="chev">⌄</span></h3>
+        <p>Wood's whole career is one mission: find the technologies disruptive enough to change how the world works, then own them years before that's obvious — AI, robotics, gene sequencing, energy storage, blockchain. The advantage is real. The danger is that being early and being wrong look identical for years.</p>
+        <span class="hint">Tap to expand the practice step</span>
+      </div>
+      <div class="expand-body"><div class="inner">In practice, her method is a question, not a hunch: why hasn't this broken through yet? Name the actual blocker — humanoid robots are capped by battery life and hard-to-scale parts, solar EVs are capped by a roof simply being too small to capture enough sun — then ask what has to go right, and who's closest to fixing exactly that.</div></div>
+    </div>
+    <div class="specimen" data-specimen>
+      <div class="num">2.</div>
+      <div>
+        <h3><span class="title-text">Consumer Change <span class="who">— Peter Lynch</span></span><span class="chev">⌄</span></h3>
+        <p>New habits, products suddenly everywhere, before Wall Street looks up from its spreadsheets. Think AirPods showing up in every commute years before analysts upgraded Apple's earnings outlook because of them. The trap: noticing a trend isn't understanding the business behind it.</p>
+        <span class="hint">Tap to expand the practice step</span>
+      </div>
+      <div class="expand-body"><div class="inner">In practice: notice the habit, then go find the unglamorous supplier or platform actually capturing the economics of it.</div></div>
+    </div>
+    <div class="specimen" data-specimen>
+      <div class="num">3.</div>
+      <div>
+        <h3><span class="title-text">Business Change <span class="who">— Carl Icahn</span></span><span class="chev">⌄</span></h3>
+        <p>Revenue accelerating, margins expanding, a turnaround quietly working before the stock believes it. Icahn didn't wait for that turnaround to happen on its own — he bought a large stake in companies with good potential but poor management, then forced the change himself: new leadership, sold-off assets, restructured costs. Unglamorous, spreadsheet-shaped change, engineered rather than spotted.</p>
+        <span class="hint">Tap to expand the practice step</span>
+      </div>
+      <div class="expand-body"><div class="inner">In practice: read the last three quarters back to back. Acceleration shows up in the trend long before it shows up in the headline — and if it isn't showing up yet, ask whether current management is even capable of making it happen.</div></div>
+    </div>
+    <div class="specimen" data-specimen>
+      <div class="num">4.</div>
+      <div>
+        <h3><span class="title-text">Bottleneck Change <span class="who">— Peter Thiel</span></span><span class="chev">⌄</span></h3>
+        <p>Don't bet on who wins the race. Find the chokepoint everyone in the race has to pass through regardless of who wins. Thiel built his case for monopoly-style businesses on exactly this: the hidden constraint that quietly decides who actually captures the value.</p>
+        <span class="hint">Tap to expand the practice step</span>
+      </div>
+      <div class="expand-body"><div class="inner">In practice: when an industry is racing toward something, ask what every single competitor needs and can't make themselves. The supplier of that thing often makes more money than the racers.</div></div>
+    </div>
+    <div class="specimen" data-specimen>
+      <div class="num">5.</div>
+      <div>
+        <h3><span class="title-text">Industry Change <span class="who">— John Templeton</span></span><span class="chev">⌄</span></h3>
+        <p>New regulation, disruption, consolidation — the rules of an entire industry shifting while most players still play by the old ones. Templeton built a decades-long career on a blunter version of the same idea: buy whole industries, even whole nations, at the point of maximum pessimism, when almost everyone else has already given up on the sector entirely.</p>
+        <span class="hint">Tap to expand the practice step</span>
+      </div>
+      <div class="expand-body"><div class="inner">In practice: don't ask which company in a hated industry is healthiest. Ask whether the whole sector is now priced for a disaster that isn't actually coming — that's where the entire industry reprices at once, not just one stock.</div></div>
+    </div>
+    <div class="specimen" data-specimen>
+      <div class="num">6.</div>
+      <div>
+        <h3><span class="title-text">Market Perception Change <span class="who">— Howard Marks</span></span><span class="chev">⌄</span></h3>
+        <p>Nothing about the business changes — only the story the market tells itself does. A solid company misses one quarter, the headlines call it a crisis, and the price falls further than the actual facts justify.</p>
+        <span class="hint">Tap to expand the practice step</span>
+      </div>
+      <div class="expand-body"><div class="inner">In practice: when the headline is scarier than the 10-K, that gap is the opportunity.</div></div>
+    </div>
+    <div class="specimen" data-specimen>
+      <div class="num">7.</div>
+      <div>
+        <h3><span class="title-text">Macro Change <span class="who">— Stanley Druckenmiller</span></span><span class="chev">⌄</span></h3>
+        <p>Rates, currencies, commodity cycles — the slow tectonic shifts that quietly reprice entire asset classes.</p>
+        <span class="hint">Tap to expand the practice step</span>
+      </div>
+      <div class="expand-body"><div class="inner">In practice: you don't need to predict the Fed. You just need to notice when the tide has already turned.</div></div>
+    </div>
+    <div class="specimen" data-specimen>
+      <div class="num">8.</div>
+      <div>
+        <h3><span class="title-text">Data-Detected Change <span class="who">— Jim Simons</span></span><span class="chev">⌄</span></h3>
+        <p>Looks at the other seven and says <em>prove it</em>. Real statistical patterns, invisible to the eye, beat a good story every time.</p>
+        <span class="hint">Tap to expand the practice step</span>
+      </div>
+      <div class="expand-body"><div class="inner">In practice: ask if your "insight" has happened before. If you can't check, you don't have a pattern — you have a hope.</div></div>
+    </div>
+  </div>
+
+  <p>None of these investors are predicting anything. They're standing closer to where the change is actually happening.</p>
+  </div>
+
+  <hr class="hr">
+
+  <div id="stage-3" class="reveal">
+  <span class="running-head">Stage Three</span>
+  <h2>So What Counts as "Low"?</h2>
+
+  <p>Back to the question from the top: nobody tells you how to know what "low" is until after it's already gone "high." Here's the honest answer — you don't know it from the price alone. You know it by comparing the price to two other things: what similar businesses cost, and how defensible this one actually is.</p>
+
+  <p>Start with the boring part. A <strong>P/E ratio</strong> — price divided by earnings — is just a translator. It converts "the stock costs $90" into "you're paying 19 times what the company earns per share each year," which is the number that's actually comparable across companies. A $90 stock and a $9 stock can be priced identically once you do this; a $90 stock can also be the cheaper one. Price alone tells you nothing. The multiple tells you something.</p>
+
+  <div class="comp-box">
+    <svg viewBox="0 0 700 200" role="img" aria-label="Bar chart comparing the P/E multiple of a subject company against four industry peers, with the subject company priced noticeably lower">
+      <title>Subject company vs. peer P/E multiples</title>
+      <desc>An illustrative comparison showing four peer companies trading at P/E multiples of 28, 24, 31, and 26, while the subject company trades at a lower multiple of 19, suggesting it may be undervalued relative to similar businesses.</desc>
+      <line x1="30" y1="170" x2="670" y2="170" stroke="var(--hairline)" stroke-width="1"/>
+      <g class="comp-bar" style="animation-delay:0s">
+        <rect x="50" y="66" width="80" height="104" fill="var(--sage)" opacity="0.65"/>
+        <text x="90" y="56" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="var(--parchment)">28x</text>
+        <text x="90" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">Peer A</text>
+      </g>
+      <g class="comp-bar" style="animation-delay:0.08s">
+        <rect x="170" y="81" width="80" height="89" fill="var(--sage)" opacity="0.65"/>
+        <text x="210" y="71" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="var(--parchment)">24x</text>
+        <text x="210" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">Peer B</text>
+      </g>
+      <g class="comp-bar" style="animation-delay:0.16s">
+        <rect x="290" y="55" width="80" height="115" fill="var(--sage)" opacity="0.65"/>
+        <text x="330" y="45" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="var(--parchment)">31x</text>
+        <text x="330" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">Peer C</text>
+      </g>
+      <g class="comp-bar" style="animation-delay:0.24s">
+        <rect x="410" y="99" width="80" height="71" fill="var(--gold)"/>
+        <text x="450" y="89" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="var(--parchment)">19x</text>
+        <text x="450" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--gold)">Your company</text>
+      </g>
+      <g class="comp-bar" style="animation-delay:0.32s">
+        <rect x="530" y="73" width="80" height="97" fill="var(--sage)" opacity="0.65"/>
+        <text x="570" y="63" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="var(--parchment)">26x</text>
+        <text x="570" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">Peer D</text>
+      </g>
+    </svg>
+    <p class="comp-caption">Illustrative. Same industry, same growth ballpark — and the gold bar costs less for every dollar of earnings.</p>
+  </div>
+
+  <p>That gap is interesting. It is not, on its own, a reason to buy. A lower multiple sometimes means "cheap." It sometimes means "cheap for a reason" — worse management, a shrinking market, a balance sheet held together with tape. The only way to tell the two apart is the question underneath all of this: why does this business get to keep charging what it charges, and for how long?</p>
+
+  <div class="moat-box">
+    <span class="moat-tag">The Moat Check</span>
+    <div class="moat-row">
+      <span class="moat-label">Switching cost</span>
+      <div class="moat-track"><div class="moat-fill" style="width:78%;"></div></div>
+    </div>
+    <div class="moat-row">
+      <span class="moat-label">Brand / trust</span>
+      <div class="moat-track"><div class="moat-fill" style="width:55%;"></div></div>
+    </div>
+    <div class="moat-row">
+      <span class="moat-label">Scale advantage</span>
+      <div class="moat-track"><div class="moat-fill" style="width:62%;"></div></div>
+    </div>
+    <div class="moat-row">
+      <span class="moat-label">Network effect</span>
+      <div class="moat-track"><div class="moat-fill" style="width:30%;"></div></div>
+    </div>
+    <p class="moat-note">A moat isn't one big wall — it's usually two or three of these, working together, that make it expensive for a competitor to take the customer away.</p>
+  </div>
+
+  <p>Put the two together and the cheap-multiple question gets an actual answer. A low P/E next to a real moat is a genuine signal — the market is mispricing a business that can defend its margins for years. A low P/E next to a weak moat is usually just an accurate price on a business that's about to get squeezed. Same number, opposite conclusion. The multiple tells you where to look. The moat tells you what you're allowed to conclude once you're there.</p>
+
+  <p>That's the actual strategy hiding behind "buy low, sell high": not predicting the bottom, but pricing a business honestly against its peers and its defenses, then buying when the market hasn't bothered to do the same homework.</p>
+  </div>
+
+  <hr class="hr">
+
+  <div id="stage-4" class="reveal">
+  <span class="running-head">Stage Four</span>
+  <h2>Getting In: Gut, Math, or Both</h2>
+
+  <p>An idea is not an investment — it's an invitation to investigate. Once it survives that, the next question is sizing.</p>
+
+  <blockquote>
+    <p>"An undersized position in a high-conviction idea is a wasted insight."</p>
+    <cite>The spirit of Stanley Druckenmiller's sizing philosophy</cite>
+  </blockquote>
+
+  <p>If you've done the work and you're right, timidity is its own mistake. The opposite pole is the Kelly Criterion — pure math, sizing the bet off your edge, no gut involved. Most disciplined investors live in the middle: starter position, then scale up once the thesis confirms. You earn the right to go big by being right first.</p>
+
+  <div class="spectrum">
+    <p class="spectrum-pretext">Drag the slider to find where your own sizing instinct actually sits.</p>
+    <div class="spectrum-labels"><span>Gut</span><span>Math</span></div>
+    <div class="spectrum-track-wrap">
+      <input type="range" min="0" max="100" value="50" id="sizingSlider" aria-label="Position sizing approach, from gut to math">
+    </div>
+    <div class="spectrum-readout">
+      <div class="pos-name" id="sizingName">The starter position</div>
+      <p id="sizingDesc">Small enough that being wrong doesn't hurt, sized just large enough to earn your attention. You scale up only once the thesis confirms — conviction, time-delayed and risk-gated.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="tag">The Munger Inversion</span>
+    <p>Before sizing anything, don't ask why this works. Ask what would make it a disaster. If you can't answer that, you understand the pitch, not the investment.</p>
+  </div>
+  </div>
+
+  <hr class="hr">
+
+  <div id="stage-5" class="reveal">
+  <span class="running-head">Stage Five</span>
+  <h2>Holding On, and Letting Go</h2>
+
+  <p>Passive, hands-off investing beats most active strategies long-term — that's not controversial, it's one of the best-documented facts in finance. Drag the slider below and watch what "long-term" actually costs an active stock-picker.</p>
+
+  <div class="horizon-box">
+    <svg viewBox="0 0 700 200" role="img" aria-label="Interactive chart showing the percentage of active fund managers who fail to beat the market, rising as the time horizon lengthens">
+      <title>Active manager underperformance by time horizon</title>
+      <desc>A single bar that grows taller as the selected time horizon increases, showing that the share of active fund managers who fail to beat a simple index fund rises from about 65% over 1 year to about 95% over 20 years.</desc>
+      <line x1="40" y1="170" x2="660" y2="170" stroke="var(--hairline)" stroke-width="1"/>
+      <line x1="40" y1="46" x2="660" y2="46" stroke="var(--hairline)" stroke-width="1" stroke-dasharray="2 4"/>
+      <text x="650" y="42" text-anchor="end" font-family="Source Serif 4, serif" font-style="italic" font-size="11" fill="var(--parchment-dim)">100%</text>
+      <rect id="horizonBar" x="310" y="86" width="80" height="84" fill="var(--gold)"/>
+      <text id="horizonPct" x="350" y="76" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="18" fill="var(--parchment)">65%</text>
+      <text x="350" y="190" text-anchor="middle" font-family="Source Serif 4, serif" font-style="italic" font-size="12" fill="var(--parchment-dim)">failed to beat a simple index fund</text>
+    </svg>
+    <div class="horizon-controls">
+      <label for="horizonSlider">1 yr</label>
+      <input type="range" id="horizonSlider" min="0" max="4" value="0" step="1" aria-label="Time horizon in years">
+      <label for="horizonSlider">20 yrs</label>
+      <span class="horizon-readout" id="horizonYears">1 year</span>
+    </div>
+    <p class="horizon-caption">Based on S&P's SPIVA scorecards. The longer you measure, the worse stock-picking looks — for professionals being paid to do it full-time.</p>
+  </div>
+
+  <p>That single fact does most of the heavy lifting in this section. If trained, well-resourced professionals mostly lose to a default index over any meaningful stretch, the bar for justifying your own active decisions is high. So why discuss active decisions at all?</p>
+
+  <div class="pool-box">
+    <svg viewBox="0 0 700 150" role="img" aria-label="A grid of one hundred dots representing fund managers, with most dots dimmed to show how few beat the market over fifteen years">
+      <title>Out of 100 active managers, roughly 10 beat the market over 15 years</title>
+      <desc>A ten by ten grid of dots, with about ten dots highlighted in gold and the remaining ninety dimmed, illustrating that only about one in ten active fund managers outperforms a simple index fund over a fifteen year period.</desc>
+      <g id="poolGrid"></g>
+      <text x="350" y="138" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="13" fill="var(--gold)">Out of 100 managers, about 10 actually beat the market over 15 years.</text>
+    </svg>
+    <p class="pool-caption">The other 90 are why "just hold an index fund" is the right default — and why the few moments you do act deserve real scrutiny.</p>
+  </div>
+
+  <p>Those rare, real moments are exactly what a passive approach is designed to ignore: a thesis breaking, a position becoming dangerously oversized through pure appreciation, a genuinely better opportunity replacing a mediocre one. None of those are about price going up or down. They're about whether the original reason you bought still holds.</p>
+
+  <h3 class="subhead-h3">When to Actually Sell</h3>
+
+  <div class="callout good">
+    <span class="tag">Real Reasons</span>
+    <p><strong>The thesis broke.</strong> You bought because of a specific, statable reason — accelerating revenue, a turnaround, a misunderstood story. If that reason is no longer true, the position has nothing left holding it up except your reluctance to admit it.</p>
+    <p><strong>The position outgrew its risk budget.</strong> A stock that doubled or tripled isn't the same size decision it was at purchase. Trimming back to your original sizing isn't losing faith — it's the position-sizing discipline from Stage Four, applied after the fact instead of before.</p>
+    <p><strong>Something better showed up.</strong> Capital is finite. A mediocre holding competing against a stronger new idea isn't entitled to keep its seat just because it's already there.</p>
+  </div>
+
+  <div class="callout">
+    <span class="tag">Reasons That Feel Real But Aren't</span>
+    <p>The price went down and it stings. The price went up and you want to "lock in" the win. You're bored. Someone on a podcast disagreed with you. None of these say anything about whether the original thesis is still true — they're just feelings wearing a thesis costume.</p>
+  </div>
+
+  <p>The thesis breaking and the price moving are two different events, and they rarely happen on the same day. Most people wait for the second one before acting on the first — which means by the time selling feels obvious, you've already given away the head start that noticing the thesis break should have bought you.</p>
+
+  <blockquote>
+    <p>"If you aren't willing to own a stock for ten years, don't own it for ten minutes."</p>
+    <cite>Warren Buffett</cite>
+  </blockquote>
+
+  <p>Read literally, this sounds like a timeframe rule. Read correctly, it's the holding-side mirror of the selling framework above: a ten-year holding period is only sane for a business whose thesis you'd still believe in year ten. Most positions don't qualify, and pretending they do is how mediocre holdings calcify into "I'll just wait for it to come back."</p>
+
+  <p>Which is exactly backwards from what the math wants — cut losses fast, let winners run — advice everyone can recite and almost no one follows. People sell winners early to lock in a good feeling and hold losers forever waiting for vindication. The disposition effect has a name precisely because it's nearly universal, not because it's rare.</p>
+
+  <p>Here's the inversion worth sitting with: you wouldn't buy your worst-performing position today at today's price, knowing what you now know. If that's true, holding it isn't a decision — it's just the absence of one.</p>
+  </div>
+
+  <hr class="hr">
+
+  <div id="stage-6" class="reveal">
+  <span class="running-head">The Synthesis</span>
+  <h2>The Journal Framework</h2>
+
+  <p>Strip away the six different personalities and the eight different sources, and the underlying process looks the same every time.</p>
+
+  <div class="ledger">
+    <div class="ledger-head">
+      <span class="eyebrow" style="margin-bottom:0;">Investment Opportunity Discovery Framework</span>
+      <h3>Seven steps, one loop</h3>
+    </div>
+    <div class="ledger-rows">
+      <div class="ledger-row"><div class="step-no">01</div><div class="step-text">Observe change<small>In the world, the business, or the data.</small></div></div>
+      <div class="ledger-row"><div class="step-no">02</div><div class="step-text">Generate ideas<small>Turn the observation into a specific, falsifiable thesis.</small></div></div>
+      <div class="ledger-row"><div class="step-no">03</div><div class="step-text">Research deeply<small>Understand the business, not just the story.</small></div></div>
+      <div class="ledger-row"><div class="step-no">04</div><div class="step-text">Validate with data<small>Check whether the pattern is real or a coincidence you like.</small></div></div>
+      <div class="ledger-row"><div class="step-no">05</div><div class="step-text">Assess risk<small>Invert. Find out what kills the thesis.</small></div></div>
+      <div class="ledger-row"><div class="step-no">06</div><div class="step-text">Build conviction<small>Size the position to match how much homework you've actually done.</small></div></div>
+      <div class="ledger-row"><div class="step-no">07</div><div class="step-text">Act patiently<small>The change you found still needs time to show up in a price.</small></div></div>
+    </div>
+  </div>
+
+  <p>Buffett claims he's never made a decision based on emotion. Superhuman discipline, or a flattering memory — doesn't matter, the aspiration's the point. Every stage above is really the same fight: narrative bias hunting ideas, overconfidence or underconfidence sizing them, loss aversion holding them, recency bias deciding when the wave's already crested.</p>
+
+  <p>Catching a wave early — Wood buying BTC and NVDA years before either was consensus — isn't mystical. It's a belief, backed by research, sized with conviction once the thesis firmed up, held through volatility because nothing broke. Four stages, working at once.</p>
+  </div>
+
+  <hr class="hr">
+
+  <h2>Key Takeaways</h2>
+  <ul class="takeaways">
+    <li>Tips are conclusions other people already reached. Developments are raw material nobody's finished using yet.</li>
+    <li>Change shows up in recognizable places: the future, the consumer, the business itself, the industry, market perception, the macro backdrop, or the data.</li>
+    <li>An idea is not an investment. It's an invitation to go check.</li>
+    <li>Munger's inversion — what would make this a disaster? — is the fastest way to tell if you understand something or just like it.</li>
+    <li>Buying right and holding right are different skills, and most damage happens in the gap between them.</li>
+  </ul>
+
+  <div class="action-box">
+    <span class="tag">Action Step — This Week</span>
+    <p>Pick one of the eight sources above and find a single piece of concrete evidence of it in the real world — not a stock, not a ticker, just one thing that's shifted and hasn't fully shown up in a price yet. Write it down. That sentence is the seed of every great investment anyone has ever made.</p>
+  </div>
+
+  <div class="next-vol">
+    <div>
+      <span class="label">Up Next — Vol. 02</span>
+      <h4>Eggs, Baskets, and Other Casualties</h4>
+      <p class="sub">Diversification vs. concentration — and why both camps think the other one is gambling.</p>
+    </div>
+    <div class="arrow">→</div>
+  </div>
+
+  <div class="closer">
+    <p>Markets don't reward people who predict the future. They reward people who noticed the present a little earlier than everyone else, and had the nerve to act on it before it became obvious.</p>
+  </div>
+
+</article>
+</div>
+
+<footer>
+  <p>The Journal of Investment Philosophy — Vol. 01. Not financial advice. Just philosophy that occasionally makes you money.</p>
+</footer>
+
+<script>
+(function(){
+  var railFill = document.getElementById('railFill');
+  var stops = Array.prototype.slice.call(document.querySelectorAll('.rail-stop'));
+  var sections = stops.map(function(s){ return document.getElementById(s.getAttribute('data-target')); });
+
+  function onScroll(){
+    var doc = document.documentElement;
+    var scrollTop = window.scrollY || doc.scrollTop;
+    var scrollHeight = doc.scrollHeight - doc.clientHeight;
+    var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+    if(railFill){ railFill.style.height = Math.min(100, Math.max(0, pct)) + '%'; }
+
+    var activeIndex = -1;
+    sections.forEach(function(sec, i){
+      if(!sec) return;
+      var rect = sec.getBoundingClientRect();
+      if(rect.top < window.innerHeight * 0.5){ activeIndex = i; }
+    });
+    stops.forEach(function(s, i){ s.classList.toggle('active', i === activeIndex); });
+  }
+
+  stops.forEach(function(s){
+    s.addEventListener('click', function(){
+      var target = document.getElementById(s.getAttribute('data-target'));
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  var seats = Array.prototype.slice.call(document.querySelectorAll('[data-seat]'));
+  seats.forEach(function(seat){
+    seat.addEventListener('click', function(){
+      seat.classList.toggle('flipped');
+    });
+  });
+
+  var specimens = Array.prototype.slice.call(document.querySelectorAll('[data-specimen]'));
+  specimens.forEach(function(spec){
+    spec.addEventListener('click', function(){
+      spec.classList.toggle('open');
+    });
+  });
+
+  var slider = document.getElementById('sizingSlider');
+  var nameEl = document.getElementById('sizingName');
+  var descEl = document.getElementById('sizingDesc');
+  if(slider){
+    var stages = [
+      {max:20, name:'Earned conviction', desc:'Druckenmiller\u2019s school: once the thesis has survived the inversion test and you are genuinely right, an undersized position is a wasted insight. Size matches belief that has already been checked.'},
+      {max:45, name:'Conviction, sized down', desc:'You trust the read, but you size for the chance you are wrong about something you have not found yet.'},
+      {max:65, name:'The starter position', desc:'Small enough that being wrong does not hurt, sized just large enough to earn your attention. You scale up only once the thesis confirms \u2014 conviction, time-delayed and risk-gated.'},
+      {max:85, name:'Edge-weighted sizing', desc:'Closer to Kelly territory: position size is a function of your estimated edge and the odds, not how good the idea feels.'},
+      {max:101, name:'Full Kelly', desc:'Pure math, no gut at all. Mathematically optimal and famously violent \u2014 it sizes positions in a way that feels reckless even when the formula is correct.'}
+    ];
+    function render(v){
+      var s = stages.find(function(st){ return v <= st.max; }) || stages[stages.length-1];
+      nameEl.textContent = s.name;
+      descEl.textContent = s.desc;
+    }
+    slider.addEventListener('input', function(){ render(parseInt(slider.value,10)); });
+    render(parseInt(slider.value,10));
+  }
+
+  var horizonSlider = document.getElementById('horizonSlider');
+  var horizonBar = document.getElementById('horizonBar');
+  var horizonPct = document.getElementById('horizonPct');
+  var horizonYears = document.getElementById('horizonYears');
+  if(horizonSlider){
+    var horizonData = [
+      {years:'1 year', pct:65},
+      {years:'5 years', pct:76},
+      {years:'10 years', pct:84},
+      {years:'15 years', pct:90},
+      {years:'20 years', pct:95}
+    ];
+    var baseline = 170;
+    var maxHeight = 130;
+    function renderHorizon(i){
+      var d = horizonData[i];
+      var h = Math.round(maxHeight * d.pct / 100);
+      var y = baseline - h;
+      horizonBar.setAttribute('y', y);
+      horizonBar.setAttribute('height', h);
+      horizonPct.setAttribute('y', y - 10);
+      horizonPct.textContent = d.pct + '%';
+      horizonYears.textContent = d.years;
+    }
+    horizonSlider.addEventListener('input', function(){
+      renderHorizon(parseInt(horizonSlider.value, 10));
+    });
+    renderHorizon(0);
+  }
+
+  var poolGrid = document.getElementById('poolGrid');
+  if(poolGrid){
+    var cols = 10, rows = 10, dotR = 5, gapX = 26, gapY = 11, startX = 233, startY = 18;
+    var winners = 10;
+    var html = '';
+    for(var r = 0; r < rows; r++){
+      for(var c = 0; c < cols; c++){
+        var idx = r * cols + c;
+        var cx = startX + c * gapX;
+        var cy = startY + r * gapY;
+        var isWinner = idx < winners;
+        var fill = isWinner ? 'var(--gold)' : 'var(--hairline)';
+        var delay = (idx * 0.012).toFixed(3);
+        html += '<circle class="pool-dot" style="animation-delay:' + delay + 's" cx="' + cx + '" cy="' + cy + '" r="' + dotR + '" fill="' + fill + '"></circle>';
+      }
+    }
+    poolGrid.innerHTML = html;
+  }
+})();
+</script>
+
+</body>
+</html>
