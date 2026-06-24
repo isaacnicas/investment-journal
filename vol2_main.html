@@ -5,16 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eggs, Baskets, and Other Casualties — The Journal of Investment Philosophy, Vol. 2</title>
 <meta name="description" content="Diversification vs. concentration — and why both camps think the other one is gambling.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Eggs, Baskets, and Other Casualties — The Journal of Investment Philosophy, Vol. 2">
-<meta property="og:description" content="Diversification vs. concentration — and why both camps think the other one is gambling.">
-<meta property="og:url" content="https://isaacnicas.github.io/investment-journal/vol-02.html">
-<meta property="og:site_name" content="The Journal of Investment Philosophy">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet">
 <style>
-  /* ── TOKENS (Vol. 1 system) ── */
   :root{
     --ink:#0F1410;
     --ink-soft:#171D17;
@@ -27,10 +21,8 @@
     --rust:#B5503D;
     --hairline:rgba(242,237,225,0.14);
   }
-
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;overflow-x:hidden;}
-
   body{
     background:var(--ink);
     color:var(--parchment);
@@ -40,624 +32,185 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-
   a{color:var(--gold);text-decoration:none;}
-
   .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
 
-  /* ── READING RAIL (Vol. 1 exact) ── */
-  .rail{
-    position:fixed;
-    left:0;top:0;bottom:0;
-    width:3px;
-    background:var(--hairline);
-    z-index:40;
-  }
-  .rail-fill{
-    width:100%;
-    background:var(--gold);
-    height:0%;
-    transition:height 0.1s linear;
-  }
-  .rail-stops{
-    position:fixed;
-    left:14px;
-    top:50%;
-    transform:translateY(-50%);
-    display:flex;
-    flex-direction:column;
-    gap:22px;
-    z-index:41;
-  }
-  .rail-stop{
-    width:7px;height:7px;
-    border-radius:50%;
-    background:var(--ink-card);
-    border:1px solid var(--sage);
-    transition:background 0.3s,border-color 0.3s,transform 0.3s;
-    cursor:pointer;
-    position:relative;
-  }
-  .rail-stop.active{
-    background:var(--gold);
-    border-color:var(--gold);
-    transform:scale(1.3);
-  }
-  .rail-stop-label{
-    position:absolute;
-    left:18px;top:-4px;
-    font-family:'Inter',sans-serif;
-    font-size:11px;
-    font-weight:400;
-    letter-spacing:0.02em;
-    color:var(--parchment-dim);
-    white-space:nowrap;
-    opacity:0;
-    transform:translateX(-4px);
-    transition:opacity 0.2s,transform 0.2s;
-    pointer-events:none;
-  }
+  /* RAIL */
+  .rail{position:fixed;left:0;top:0;bottom:0;width:3px;background:var(--hairline);z-index:40;}
+  .rail-fill{width:100%;background:var(--gold);height:0%;transition:height 0.1s linear;}
+  .rail-stops{position:fixed;left:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:22px;z-index:41;}
+  .rail-stop{width:7px;height:7px;border-radius:50%;background:var(--ink-card);border:1px solid var(--sage);transition:background 0.3s,border-color 0.3s,transform 0.3s;cursor:pointer;position:relative;}
+  .rail-stop.active{background:var(--gold);border-color:var(--gold);transform:scale(1.3);}
+  .rail-stop-label{position:absolute;left:18px;top:-4px;font-family:'Inter',sans-serif;font-size:11px;font-weight:400;letter-spacing:0.02em;color:var(--parchment-dim);white-space:nowrap;opacity:0;transform:translateX(-4px);transition:opacity 0.2s,transform 0.2s;pointer-events:none;}
   .rail-stop:hover .rail-stop-label{opacity:1;transform:translateX(0);}
   @media(max-width:700px){.rail-stops{display:none;}}
 
-  /* ── MASTHEAD ── */
-  .masthead{
-    padding:64px 28px 40px;
-    max-width:760px;
-    margin:0 auto;
-    border-bottom:1px solid var(--hairline);
-  }
-  .masthead-journal{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:15px;
-    color:var(--sage);
-    margin-bottom:16px;
-    display:block;
-  }
-  .masthead h1{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    font-size:clamp(38px,7vw,64px);
-    line-height:1.0;
-    color:var(--parchment);
-    letter-spacing:-0.01em;
-    margin-bottom:0;
-  }
-  .rule-row{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    margin:20px 0 14px;
-  }
+  /* MASTHEAD */
+  .masthead{padding:64px 28px 40px;max-width:760px;margin:0 auto;border-bottom:1px solid var(--hairline);}
+  .masthead-journal{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:15px;color:var(--sage);margin-bottom:16px;display:block;}
+  .masthead h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(38px,7vw,64px);line-height:1.0;color:var(--parchment);letter-spacing:-0.01em;margin-bottom:0;}
+  .rule-row{display:flex;align-items:center;gap:14px;margin:20px 0 14px;}
   .rule-row .line{height:1px;width:48px;background:var(--gold-soft);}
-  .vol-tag{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:15px;
-    color:var(--gold);
-  }
-  .masthead-sub{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:400;
-    font-size:clamp(18px,3vw,24px);
-    color:var(--parchment-dim);
-    max-width:540px;
-    margin:0 0 20px;
-    line-height:1.45;
-  }
-  .masthead-meta{
-    display:flex;
-    gap:28px;
-    flex-wrap:wrap;
-  }
-  .masthead-meta-item{
-    font-family:'Inter',sans-serif;
-    font-size:12px;
-    font-weight:400;
-    color:var(--sage);
-    display:flex;
-    align-items:center;
-    gap:6px;
-  }
+  .vol-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:15px;color:var(--gold);}
+  .masthead-sub{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(18px,3vw,24px);color:var(--parchment-dim);max-width:540px;margin:0 0 20px;line-height:1.45;}
+  .masthead-meta{display:flex;gap:28px;flex-wrap:wrap;}
+  .masthead-meta-item{font-family:'Inter',sans-serif;font-size:12px;font-weight:400;color:var(--sage);display:flex;align-items:center;gap:6px;}
   .masthead-meta-item span{color:var(--parchment-dim);}
 
-  /* ── ARTICLE ── */
+  /* ARTICLE */
   article{padding:52px 0 40px;}
 
-  /* ── SECTION HEADER ── */
-  .section-eyebrow{
-    font-family:'Inter',sans-serif;
-    font-size:11px;
-    font-weight:600;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--gold);
-    opacity:0.75;
-    margin-bottom:8px;
-    display:block;
-  }
-  h2.section-title{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    font-size:clamp(24px,4vw,32px);
-    color:var(--parchment);
-    margin:52px 0 22px;
-    letter-spacing:-0.005em;
-    line-height:1.15;
-  }
+  /* SECTION */
+  .section-eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin-bottom:8px;display:block;}
+  h2.section-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(24px,4vw,32px);color:var(--parchment);margin:52px 0 22px;letter-spacing:-0.005em;line-height:1.15;}
   h2.section-title:first-child{margin-top:0;}
-  .section-subtitle{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:400;
-    font-size:17px;
-    color:var(--sage);
-    margin:-14px 0 22px;
-  }
+  .section-subtitle{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:17px;color:var(--sage);margin:-14px 0 22px;}
 
-  /* ── BODY PROSE ── */
-  p{
-    margin-bottom:22px;
-    color:var(--parchment);
-    font-size:18px;
-    line-height:1.7;
-  }
+  /* PROSE */
+  p{margin-bottom:22px;color:var(--parchment);font-size:18px;line-height:1.7;}
   p:last-child{margin-bottom:0;}
   p strong{font-weight:600;color:var(--parchment);}
   p em{font-style:italic;color:var(--parchment-dim);}
 
-  /* ── ANALYTICAL PROSE (Inter register) ── */
-  .analytical p{
-    font-family:'Inter',sans-serif;
-    font-size:15px;
-    font-weight:300;
-    color:var(--parchment-dim);
-    line-height:1.75;
-    margin-bottom:18px;
-  }
-  .analytical p strong{
-    font-weight:500;
-    color:var(--parchment);
-  }
+  /* ANALYTICAL */
+  .analytical p{font-family:'Inter',sans-serif;font-size:15px;font-weight:300;color:var(--parchment-dim);line-height:1.75;margin-bottom:18px;}
+  .analytical p strong{font-weight:500;color:var(--parchment);}
+  .analytical p:last-child{margin-bottom:0;}
 
   .hr{border:none;height:1px;background:var(--hairline);margin:40px 0;}
 
-  /* ── PULL QUOTE (Vol. 1 style) ── */
-  blockquote{
-    margin:36px 0;
-    padding:4px 0 4px 28px;
-    border-left:2px solid var(--gold);
-  }
-  blockquote p{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:22px;
-    line-height:1.4;
-    color:var(--gold);
-    margin-bottom:6px;
-  }
-  blockquote cite{
-    font-family:'Source Serif 4',serif;
-    font-style:normal;
-    font-size:14px;
-    color:var(--sage);
-  }
+  /* OPENING QUOTE */
+  .opening-quote{margin:32px 0;padding:0 0 0 24px;border-left:2px solid var(--gold-soft);}
+  .opening-quote p{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:20px;line-height:1.5;color:var(--parchment);margin-bottom:8px;}
+  .opening-quote cite{font-family:'Inter',sans-serif;font-style:normal;font-size:12px;font-weight:400;color:var(--sage);letter-spacing:0.04em;}
+
+  /* PULL QUOTE */
+  blockquote{margin:36px 0;padding:4px 0 4px 28px;border-left:2px solid var(--gold);}
+  blockquote p{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:22px;line-height:1.4;color:var(--gold);margin-bottom:6px;}
+  blockquote cite{font-family:'Source Serif 4',serif;font-style:normal;font-size:14px;color:var(--sage);}
   blockquote cite::before{content:"— ";}
 
-  /* ── CONDITION BLOCK ── */
-  .condition{
-    margin:36px 0;
-    padding-left:20px;
-    border-left:1px solid var(--hairline);
-  }
-  .condition-num{
-    font-family:'Inter',sans-serif;
-    font-size:10px;
-    font-weight:600;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--sage);
-    margin-bottom:6px;
-    display:block;
-  }
-  .condition-title{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:20px;
-    color:var(--parchment);
-    margin-bottom:18px;
-    display:block;
-  }
+  /* CONDITION */
+  .condition{margin:36px 0;padding-left:20px;border-left:1px solid var(--hairline);}
+  .condition-num{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-bottom:6px;display:block;}
+  .condition-title{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:20px;color:var(--parchment);margin-bottom:18px;display:block;}
 
-  /* ── VERSION BLOCK ── */
+  /* VERSION BLOCK */
   .version-block{margin:24px 0;}
-  .version-label{
-    font-family:'Inter',sans-serif;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--gold);
-    opacity:0.7;
-    display:block;
-    margin-bottom:8px;
-    padding-bottom:6px;
-    border-bottom:0.5px solid var(--gold-soft);
-  }
-  .step-list{
-    list-style:none;
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-    margin:10px 0 12px;
-  }
-  .step-list li{
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    font-family:'Source Serif 4',serif;
-    font-size:16px;
-    color:var(--parchment-dim);
-    line-height:1.6;
-  }
-  .step-num{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:600;
-    color:var(--gold);
-    font-size:17px;
-    min-width:18px;
-    flex-shrink:0;
-  }
-  .version-note{
-    font-family:'Source Serif 4',serif;
-    font-style:italic;
-    font-size:14.5px;
-    color:var(--sage);
-    line-height:1.6;
-    margin-top:6px;
-    padding-left:14px;
-    border-left:1px solid var(--hairline);
-  }
+  .version-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);opacity:0.7;display:block;margin-bottom:8px;padding-bottom:6px;border-bottom:0.5px solid var(--gold-soft);}
+  .step-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin:10px 0 12px;}
+  .step-list li{display:flex;gap:12px;align-items:flex-start;font-family:'Source Serif 4',serif;font-size:16px;color:var(--parchment-dim);line-height:1.6;}
+  .step-num{font-family:'Fraunces',serif;font-style:italic;font-weight:600;color:var(--gold);font-size:17px;min-width:18px;flex-shrink:0;}
+  .version-note{font-family:'Source Serif 4',serif;font-style:italic;font-size:14.5px;color:var(--sage);line-height:1.6;margin-top:6px;padding-left:14px;border-left:1px solid var(--hairline);}
 
-  /* ── INSIGHT CARD ── */
-  .insight-card{
-    background:var(--ink-card);
-    border:1px solid var(--hairline);
-    border-top:2px solid var(--gold-soft);
-    border-radius:0 0 2px 2px;
-    padding:22px 24px;
-    margin:28px 0;
-  }
-  .insight-card .card-label{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:14px;
-    color:var(--gold);
-    margin-bottom:10px;
-    display:block;
-  }
-  .insight-card p{
-    font-size:16px;
-    color:var(--parchment-dim);
-    margin-bottom:0;
-  }
-  .insight-card p strong{
-    font-style:italic;
-    font-weight:400;
-    color:var(--parchment);
-  }
+  /* FACTOR INTRO */
+  .factor-intro{margin:32px 0;padding:22px 26px;background:var(--ink-card);border:1px solid var(--hairline);border-top:2px solid var(--gold-soft);border-radius:0 0 2px 2px;}
+  .factor-intro-label{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);opacity:0.7;display:block;margin-bottom:14px;}
+  .factor-intro p{font-family:'Source Serif 4',serif;font-size:15px;color:var(--parchment-dim);line-height:1.7;margin-bottom:14px;}
+  .factor-intro p:last-child{margin-bottom:0;}
+  .factor-rows{display:flex;flex-direction:column;gap:0;margin-top:14px;}
+  .factor-row{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--hairline);align-items:flex-start;}
+  .factor-row:last-child{border-bottom:none;}
+  .factor-tag{font-family:'Inter',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);min-width:130px;flex-shrink:0;padding-top:2px;}
+  .factor-desc{font-family:'Source Serif 4',serif;font-size:14.5px;color:var(--parchment-dim);line-height:1.6;}
 
-  /* ── FACTOR NOTE ── */
-  .factor-note{
-    background:var(--ink-soft);
-    border:1px solid var(--hairline);
-    border-radius:2px;
-    padding:22px 24px;
-    margin:24px 0;
-  }
-  .factor-note::before{
-    content:"A note on factor investing";
-    font-family:'Inter',sans-serif;
-    font-size:10px;
-    font-weight:600;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--gold);
-    opacity:0.7;
-    display:block;
-    margin-bottom:10px;
-  }
-  .factor-note p{
-    font-size:15px;
-    color:var(--parchment-dim);
-    margin-bottom:8px;
-  }
+  /* INSIGHT CARD */
+  .insight-card{background:var(--ink-card);border:1px solid var(--hairline);border-top:2px solid var(--gold-soft);border-radius:0 0 2px 2px;padding:22px 24px;margin:28px 0;}
+  .insight-card .card-label{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:14px;color:var(--gold);margin-bottom:10px;display:block;}
+  .insight-card p{font-size:16px;color:var(--parchment-dim);margin-bottom:0;}
+  .insight-card p strong{font-style:italic;font-weight:400;color:var(--parchment);}
+
+  /* FACTOR NOTE */
+  .factor-note{background:var(--ink-soft);border:1px solid var(--hairline);border-radius:2px;padding:22px 24px;margin:24px 0;}
+  .factor-note::before{content:"A note on factor investing";font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);opacity:0.7;display:block;margin-bottom:10px;}
+  .factor-note p{font-size:15px;color:var(--parchment-dim);margin-bottom:8px;}
   .factor-note p:last-of-type{margin-bottom:12px;}
   .model-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
-  .model-pill{
-    font-family:'Inter',sans-serif;
-    font-size:11px;
-    font-weight:400;
-    padding:3px 9px;
-    border-radius:3px;
-    border:0.5px solid rgba(169,136,57,0.4);
-    color:var(--gold);
-    opacity:0.8;
-  }
+  .model-pill{font-family:'Inter',sans-serif;font-size:11px;font-weight:400;padding:3px 9px;border-radius:3px;border:0.5px solid rgba(169,136,57,0.4);color:var(--gold);opacity:0.8;}
 
-  /* ── FINDINGS LIST ── */
+  /* FINDINGS LIST */
   .findings-list{list-style:none;display:flex;flex-direction:column;margin:22px 0;}
-  .findings-list li{
-    padding:16px 0;
-    border-bottom:1px solid var(--hairline);
-    font-size:16px;
-    color:var(--parchment-dim);
-    line-height:1.7;
-  }
+  .findings-list li{padding:16px 0;border-bottom:1px solid var(--hairline);font-size:16px;color:var(--parchment-dim);line-height:1.7;}
   .findings-list li:first-child{border-top:1px solid var(--hairline);}
-  .findings-list li strong{
-    display:block;
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:18px;
-    color:var(--parchment);
-    margin-bottom:4px;
-  }
+  .findings-list li strong{display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:18px;color:var(--parchment);margin-bottom:4px;}
 
-  /* ── CLOSING FINDINGS ── */
+  /* CLOSING FINDINGS */
   .closing-findings{list-style:none;display:flex;flex-direction:column;margin:22px 0;}
-  .closing-findings li{
-    padding:14px 0;
-    border-bottom:1px solid var(--hairline);
-    font-size:16px;
-    color:var(--parchment-dim);
-    line-height:1.7;
-  }
+  .closing-findings li{padding:14px 0;border-bottom:1px solid var(--hairline);font-size:16px;color:var(--parchment-dim);line-height:1.7;}
   .closing-findings li:first-child{border-top:1px solid var(--hairline);}
 
-  /* ── VISUAL EMBED ── */
-  .visual-wrap{
-    margin:28px 0;
-    border:1px solid var(--hairline);
-    border-radius:4px;
-    overflow:hidden;
-  }
-  .visual-caption{
-    padding:10px 16px;
-    background:var(--ink-soft);
-    border-top:1px solid var(--hairline);
-    font-family:'Inter',sans-serif;
-    font-size:12px;
-    font-weight:300;
-    color:var(--sage);
-    line-height:1.5;
-  }
+  /* CHART DROPDOWN */
+  .chart-dropdown{margin:28px 0;border:1px solid var(--hairline);border-radius:4px;overflow:hidden;}
+  .chart-summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;cursor:pointer;list-style:none;user-select:none;background:var(--ink-soft);}
+  .chart-summary::-webkit-details-marker{display:none;}
+  .chart-summary-title{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:16px;color:var(--parchment);}
+  .chart-summary-caption{font-family:'Inter',sans-serif;font-size:11px;font-weight:300;color:var(--sage);flex:1;display:none;}
+  .chart-chevron{width:16px;height:16px;color:var(--sage);flex-shrink:0;transition:transform 0.2s ease;}
+  details[open] .chart-chevron{transform:rotate(180deg);}
+  .chart-body{border-top:1px solid var(--hairline);}
+  details[open] .chart-summary-caption{display:block;}
+  @media(min-width:600px){.chart-summary-caption{display:block;}}
 
-  /* ── FOR THE EMPIRICALLY CURIOUS ── */
-  .curious-toggle{
-    margin-top:36px;
-    border-top:1px solid var(--hairline);
-  }
-  .curious-toggle summary{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:16px 0;
-    cursor:pointer;
-    list-style:none;
-    user-select:none;
-  }
+  /* CURIOUS TOGGLE */
+  .curious-toggle{margin-top:36px;border-top:1px solid var(--hairline);}
+  .curious-toggle summary{display:flex;align-items:center;justify-content:space-between;padding:16px 0;cursor:pointer;list-style:none;user-select:none;}
   .curious-toggle summary::-webkit-details-marker{display:none;}
   .curious-left{display:flex;flex-direction:column;gap:3px;}
-  .curious-eyebrow{
-    font-family:'Inter',sans-serif;
-    font-size:10px;
-    font-weight:600;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--gold);
-    opacity:0.7;
-  }
-  .curious-desc{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-size:15px;
-    color:var(--sage);
-  }
-  .curious-chevron{
-    width:18px;height:18px;
-    color:var(--sage);
-    flex-shrink:0;
-    transition:transform 0.25s ease;
-  }
+  .curious-eyebrow{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);opacity:0.7;}
+  .curious-desc{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--sage);}
+  .curious-chevron{width:18px;height:18px;color:var(--sage);flex-shrink:0;transition:transform 0.25s ease;}
   details[open] .curious-chevron{transform:rotate(180deg);}
-  .curious-body{
-    padding:20px 0 32px;
-    border-top:1px solid var(--hairline);
-  }
-  .curious-h4{
-    font-family:'Inter',sans-serif;
-    font-size:10px;
-    font-weight:600;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-    color:var(--gold);
-    opacity:0.65;
-    margin:24px 0 8px;
-  }
+  .curious-body{padding:20px 0 32px;border-top:1px solid var(--hairline);}
+  .curious-h4{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);opacity:0.65;margin:24px 0 8px;}
   .curious-h4:first-child{margin-top:0;}
-  .curious-prose p{
-    font-family:'Source Serif 4',serif;
-    font-size:15px;
-    color:var(--parchment-dim);
-    line-height:1.7;
-    margin-bottom:10px;
-  }
+  .curious-prose p{font-family:'Source Serif 4',serif;font-size:15px;color:var(--parchment-dim);line-height:1.7;margin-bottom:10px;}
   .curious-table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;}
-  .curious-table th{
-    font-family:'Inter',sans-serif;
-    font-weight:500;
-    font-size:11px;
-    text-align:left;
-    padding:6px 10px;
-    border-bottom:1px solid var(--hairline);
-    color:var(--sage);
-    white-space:nowrap;
-  }
-  .curious-table td{
-    padding:7px 10px;
-    border-bottom:1px solid var(--hairline);
-    font-family:'Source Serif 4',serif;
-    color:var(--parchment-dim);
-  }
+  .curious-table th{font-family:'Inter',sans-serif;font-weight:500;font-size:11px;text-align:left;padding:6px 10px;border-bottom:1px solid var(--hairline);color:var(--sage);white-space:nowrap;}
+  .curious-table td{padding:7px 10px;border-bottom:1px solid var(--hairline);font-family:'Source Serif 4',serif;color:var(--parchment-dim);}
   .curious-table td:first-child{color:var(--parchment);font-weight:500;}
   .agree-yes{color:var(--gold);font-weight:600;}
   .agree-no{color:var(--rust);font-weight:600;}
 
-  /* ── CITATION ── */
-  sup[data-cite]{
-    cursor:help;
-    color:var(--gold);
-    font-size:0.65em;
-    position:relative;
-  }
-  sup[data-cite]:hover::after{
-    content:attr(data-cite);
-    position:absolute;
-    bottom:calc(100% + 6px);
-    left:50%;
-    transform:translateX(-50%);
-    background:var(--ink-card);
-    color:var(--parchment);
-    border:1px solid var(--hairline);
-    font-family:'Inter',sans-serif;
-    font-size:12px;
-    font-weight:300;
-    padding:6px 12px;
-    border-radius:3px;
-    white-space:nowrap;
-    pointer-events:none;
-    z-index:300;
-    max-width:280px;
-    white-space:normal;
-    line-height:1.5;
-    text-align:center;
-  }
+  /* CITATION */
+  sup[data-cite]{cursor:help;color:var(--gold);font-size:0.65em;position:relative;}
+  sup[data-cite]:hover::after{content:attr(data-cite);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:var(--ink-card);color:var(--parchment);border:1px solid var(--hairline);font-family:'Inter',sans-serif;font-size:12px;font-weight:300;padding:6px 12px;border-radius:3px;white-space:normal;pointer-events:none;z-index:300;max-width:280px;line-height:1.5;text-align:center;}
 
-  /* ── CASE RULE ── */
+  /* CASE RULE */
   .case-rule{border:none;height:1px;background:var(--hairline);margin:28px 0;}
 
-  /* ── NEXT VOL ── */
-  .next-vol{
-    margin:48px 0 0;
-    padding:26px 28px;
-    border:1px solid var(--hairline);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:18px;
-    flex-wrap:wrap;
-  }
-  .next-vol .label{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:15px;
-    color:var(--gold);
-    margin-bottom:6px;
-    display:block;
-  }
-  .next-vol h4{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    font-size:19px;
-    color:var(--parchment);
-  }
-  .next-vol .sub{
-    font-family:'Source Serif 4',serif;
-    font-style:italic;
-    font-size:13.5px;
-    color:var(--parchment-dim);
-    margin-top:4px;
-  }
-  .next-vol .arrow{
-    font-family:'Fraunces',serif;
-    font-weight:500;
-    color:var(--sage);
-    font-size:22px;
-  }
+  /* NEXT VOL */
+  .next-vol{margin:48px 0 0;padding:26px 28px;border:1px solid var(--hairline);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;}
+  .next-vol .label{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:15px;color:var(--gold);margin-bottom:6px;display:block;}
+  .next-vol h4{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--parchment);}
+  .next-vol .sub{font-family:'Source Serif 4',serif;font-style:italic;font-size:13.5px;color:var(--parchment-dim);margin-top:4px;}
+  .next-vol .arrow{font-family:'Fraunces',serif;font-weight:500;color:var(--sage);font-size:22px;}
 
-  /* ── SCROLL REVEAL ── */
-  .reveal{
-    opacity:0;
-    transform:translateY(18px);
-    transition:opacity 0.6s ease,transform 0.6s ease;
-  }
+  /* SCROLL REVEAL */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease;}
   .reveal.in-view{opacity:1;transform:translateY(0);}
-  @media(prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none;transition:none;}
-  }
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 
-  /* ── FOOTER ── */
-  footer{
-    border-top:1px solid var(--hairline);
-    padding:28px 0 50px;
-    text-align:center;
-  }
-  footer p{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:400;
-    font-size:14.5px;
-    color:var(--parchment-dim);
-    margin-bottom:6px;
-  }
+  /* FOOTER */
+  footer{border-top:1px solid var(--hairline);padding:28px 0 50px;text-align:center;}
+  footer p{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:14.5px;color:var(--parchment-dim);margin-bottom:6px;}
   footer a{color:var(--gold);}
 
-  /* ── RESPONSIVE ── */
-  @media(max-width:560px){
-    body{font-size:16.5px;}
-    .masthead h1{font-size:32px;}
-  }
+  @media(max-width:560px){body{font-size:16.5px;}.masthead h1{font-size:32px;}}
 </style>
 </head>
 <body>
 
-<!-- Reading rail -->
 <div class="rail"><div class="rail-fill" id="rail-fill"></div></div>
 
-<!-- Nav stops -->
 <nav class="rail-stops" aria-label="Sections">
-  <div class="rail-stop active" data-target="opening">
-    <span class="rail-stop-label">Opening</span>
-  </div>
-  <div class="rail-stop" data-target="skill">
-    <span class="rail-stop-label">Skill, or a Factor in Disguise?</span>
-  </div>
-  <div class="rail-stop" data-target="data">
-    <span class="rail-stop-label">The Answer Is in the Data</span>
-  </div>
-  <div class="rail-stop" data-target="where">
-    <span class="rail-stop-label">Where Concentration Earns Its Place</span>
-  </div>
-  <div class="rail-stop" data-target="knowing">
-    <span class="rail-stop-label">Knowing vs Being Right</span>
-  </div>
-  <div class="rail-stop" data-target="basket">
-    <span class="rail-stop-label">The Basket, Honestly</span>
-  </div>
+  <div class="rail-stop active" data-target="opening"><span class="rail-stop-label">Opening</span></div>
+  <div class="rail-stop" data-target="skill"><span class="rail-stop-label">Skill, or a Factor in Disguise?</span></div>
+  <div class="rail-stop" data-target="data"><span class="rail-stop-label">The Answer Is in the Data</span></div>
+  <div class="rail-stop" data-target="where"><span class="rail-stop-label">Where Concentration Earns Its Place</span></div>
+  <div class="rail-stop" data-target="knowing"><span class="rail-stop-label">Knowing vs Being Right</span></div>
+  <div class="rail-stop" data-target="basket"><span class="rail-stop-label">The Basket, Honestly</span></div>
 </nav>
 
-<!-- Masthead -->
 <header class="masthead" id="opening">
   <a href="https://isaacnicas.github.io/investment-journal/" class="masthead-journal">The Journal of Investment Philosophy</a>
   <h1>Eggs, Baskets, and Other Casualties</h1>
@@ -677,36 +230,71 @@
 <div class="wrap">
 <article>
 
-<!-- ── OPENING ── -->
+<!-- OPENING -->
 <section id="opening-body" class="reveal">
-  <p>Stanley Druckenmiller once quoted Mark Twain to make the case for concentration. "Put all your eggs in one basket," Twain wrote, "and then watch that basket." A generation of investors heard one of the greatest money managers alive endorse conviction over diversification. The quote is real. What followed from it deserves more scrutiny than it usually receives.</p>
-  <p>The debate between concentration and diversification is one of the oldest in investing, and one of the least resolved. On one side: Buffett, Druckenmiller, Munger, and a long tradition of celebrated stock-pickers who built fortunes by betting heavily on a small number of ideas. On the other: decades of academic research showing that diversification reduces risk without proportionally reducing return, and that most active managers underperform passive indices after costs.</p>
-  <p>Both camps have evidence. Both camps have track records. And both camps, when pressed, tend to talk past each other — because they are often answering different questions.</p>
+
+  <p>Every serious investor eventually arrives at the same fork in the road.</p>
+
+  <div class="opening-quote">
+    <p>"Diversification is protection against ignorance. It makes little sense if you know what you are doing."</p>
+    <cite>Warren Buffett, Berkshire Hathaway Annual Meeting, 1993</cite>
+  </div>
+
+  <p>One path says: find a few things you understand deeply, bet heavily, and hold with conviction. The other says that the real edge lies not in picking the single best bet, but in combining many bets that do not move together. Ray Dalio built the world's largest hedge fund on that idea, calling it the Holy Grail of investing.</p>
+
+  <div class="opening-quote">
+    <p>"With fifteen to twenty good, uncorrelated return streams, you can dramatically reduce your risks without reducing your expected returns."</p>
+    <cite>Ray Dalio, Principles, 2017</cite>
+  </div>
+
+  <p>Both men spent decades proving their convictions in the market. Both made fortunes doing it. The portfolios they describe could not be more different from each other.</p>
+
+  <p>Stanley Druckenmiller once quoted Mark Twain to sharpen the case for conviction: "Put all your eggs in one basket, and then watch that basket." A generation of investors heard one of the greatest money managers alive endorse concentration over caution. What followed from it deserves more scrutiny than it usually receives.</p>
+
+  <p>The debate between concentration and diversification is one of the oldest in investing, and one of the least resolved. Both camps have evidence. Both camps have track records. And both camps, when pressed, tend to talk past each other — because they are often answering different questions.</p>
+
   <p>The concentrated investor asks: if I know something the market doesn't, why dilute it across fifty names? The diversifier asks: how confident are you, really, that what you know isn't already priced in? This volume takes that second question seriously — not to dismiss concentration, but to examine it honestly, with data, and with the kind of scrutiny that most investment writing about conviction quietly avoids.</p>
+
 </section>
 
-<!-- ── SKILL OR FACTOR ── -->
+<!-- SKILL OR FACTOR -->
 <section id="skill" class="reveal">
   <span class="section-eyebrow">Section I</span>
   <h2 class="section-title">Skill, or a Factor in Disguise?</h2>
 
-  <p>In 2009, two researchers — Antti Petajisto and Martijn Cremers — built a way to measure something nobody had measured cleanly before: how different a fund manager's holdings actually are from the index they're benchmarked against. They called it <strong>Active Share</strong>.</p>
-  <p>Active Share, put simply, measures how different a portfolio looks from its benchmark. The finding made waves. Managers with high Active Share outperformed. Managers who quietly hugged the benchmark while charging active-management fees did not. It looked like clean, direct evidence that real conviction actually pays.</p>
+  <p>In 2009, two finance researchers — Antti Petajisto and Martijn Cremers — published a paper in the <em>Review of Financial Studies</em> that introduced a new way of measuring something deceptively simple: how different is a fund manager's portfolio from the index they are paid to beat?</p>
+
+  <p>They called it <strong>Active Share</strong>.</p>
+
+  <p>Here is what it measures in plain terms. Take a fund manager benchmarked against the S&P 500. If their fund holds exactly the same stocks in exactly the same proportions as the S&P 500, their Active Share is zero — they are running an index fund while charging active management fees. If their fund looks entirely different, their Active Share approaches 100. A fund with an Active Share of 60 means 40 percent of its holdings overlap with the index, and 60 percent represent independent bets.</p>
+
+  <p>Studying US equity mutual funds from 1980 to 2003, Petajisto and Cremers found that managers with high Active Share significantly outperformed their benchmarks, before and after fees. Managers with low Active Share underperformed. Genuine conviction, measured as real portfolio difference from the benchmark, appeared to pay.</p>
+
   <p>Then a different team went back and checked something the original study hadn't fully isolated.</p>
-  <p>Andrea Frazzini, Jacob Friedman, and Lukasz Pomorski<sup data-cite="Frazzini, Friedman & Pomorski (2012). Deactivating Active Share. AQR Capital Management.">¹</sup> controlled for style and factor exposures before measuring the Active Share premium again. Once size and value exposure were accounted for, the premium shrank dramatically. A meaningful share of those celebrated high-Active-Share managers weren't unusually skilled stock pickers. They were, in large part, running a small-cap value strategy and calling it conviction.</p>
-  <p>This isn't a story about fraud or bad faith. The managers may not have known it themselves. A portfolio can look like genius for years simply by sitting in the right factor at the right time — and from the inside, that's indistinguishable from skill.</p>
-  <p>A high-conviction portfolio built in 2010 and held through 2020 looked, in hindsight, brilliant. It was also, for most managers running one, heavily loaded into growth and momentum names riding one of the strongest tech bull markets in history. The same portfolio built in 2000 and held through 2002 was a catastrophe — not because the manager suddenly got worse, but because the regime underneath them changed.</p>
-  <p>The honest question was never "did this person concentrate and win." It's how much of that win survives once you control for the factors they were quietly riding the whole time. Concentration that survives a factor lens is a different, much rarer thing than concentration that simply happened to work.</p>
+
+  <p>In 2012, Andrea Frazzini, Jacob Friedman, and Lukasz Pomorski<sup data-cite="Frazzini, Friedman & Pomorski (2012). Deactivating Active Share. AQR Capital Management.">¹</sup> controlled for factor exposures — specifically size and value tilts — before measuring the Active Share premium again. Once you accounted for the fact that high-Active-Share funds tended to overweight smaller companies whose shares traded cheaply relative to their book value (a small-cap value tilt), the outperformance shrank substantially. A meaningful portion of those celebrated high-Active-Share managers weren't unusually skilled stock pickers. They were, in large part, tilting toward a well-documented historical pattern and calling it conviction.</p>
+
+  <p>A portfolio can look like genius for years simply by sitting in the right factor at the right time — and from the inside, that experience is indistinguishable from skill.</p>
+
+  <p>A high-conviction portfolio built in 2010 and held through 2020 looked, in hindsight, brilliant. It was also, for most managers running one, heavily loaded into growth and momentum names riding one of the strongest technology bull markets in history. The same portfolio built in 2000 and held through 2002 was a catastrophe — not because the manager suddenly got worse, but because the regime underneath them changed.</p>
+
+  <p>The honest question was never whether someone concentrated and won. It is how much of that win survives once you control for the factors they were quietly riding the whole time. Concentration that survives a factor lens is a different, much rarer thing than concentration that simply happened to work.</p>
+
   <p>Which is exactly what we're going to find out.</p>
 </section>
 
-<!-- ── THE ANSWER IS IN THE DATA ── -->
+<!-- THE ANSWER IS IN THE DATA -->
 <section id="data" class="reveal">
   <span class="section-eyebrow">Section II</span>
   <h2 class="section-title">The Answer Is in the Data</h2>
 
-  <p><em>A note before the numbers: what follows is a test we built ourselves, with public data, documented assumptions, and no institutional backing. We are going to tell you exactly what we found — including where the results held up and where they didn't. That transparency is not a disclaimer. It is the argument.</em></p>
-  <p>We ran the same test twice, built two different ways. The question was identical each time: holding the selection signal constant, what actually changes when you concentrate a portfolio versus spreading it across more names? The only thing that differed was how concentration was defined. And that difference changed the answer in ways that most investment advice about conviction quietly ignores.</p>
+  <p><em>What follows is a test we built ourselves, with public data and documented assumptions. We are going to tell you exactly what we found — including where the results held up and where they didn't.</em></p>
+
+  <p>We ran the same test twice, built two different ways. The question was identical each time: if you pick stocks using the same method, what changes when you bet heavily on just a few of them versus spreading across more?</p>
+
+  <p>Before explaining the two versions, one term needs a plain definition.</p>
+
+  <p>A <strong>signal</strong> is a consistent rule for ranking stocks — a reason to prefer some over others. "Buy the stocks with the lowest price relative to their book value" is a signal. "Buy the stocks with the strongest returns over the past year" is a signal. These two happen to be the signals we tested: value and momentum, respectively. The point of using a signal is that it removes discretion from the ranking — every stock gets the same treatment, and portfolios are formed mechanically from the results. The question the test asks is whether concentrating into the top-ranked names adds anything beyond what the signal was already delivering.</p>
 
   <div class="hr"></div>
 
@@ -715,22 +303,28 @@
     <ol class="step-list">
       <li><span class="step-num">1</span><span>Rank all available portfolios from strongest signal to weakest.</span></li>
       <li><span class="step-num">2</span><span>Form the most concentrated basket from the top-ranked bucket only.</span></li>
-      <li><span class="step-num">3</span><span>Form broader baskets by adding the next bucket down, until the broadest holds everything equally.</span></li>
+      <li><span class="step-num">3</span><span>Form broader baskets by adding the next bucket down, then the next, until the broadest holds everything equally.</span></li>
     </ol>
-    <p class="version-note">Used in the most-cited studies on portfolio breadth, including Petajisto and Cremers<sup data-cite="Petajisto & Cremers (2009). How Active Is Your Fund Manager? Yale School of Management.">²</sup> and Evans and Archer.<sup data-cite="Evans & Archer (1968). Diversification and the Reduction of Dispersion. Journal of Finance.">³</sup> Every time you widen, you are simultaneously diversifying and adding weaker-signal names. The construction cannot separate those two effects.</p>
+    <p class="version-note">Used in the most-cited studies on portfolio breadth, including Petajisto and Cremers<sup data-cite="Petajisto & Cremers (2009). How Active Is Your Fund Manager? Review of Financial Studies, Vol. 22, Issue 9.">²</sup> and Evans and Archer.<sup data-cite="Evans & Archer (1968). Diversification and the Reduction of Dispersion. Journal of Finance.">³</sup> Every time you widen the portfolio, you are simultaneously diversifying and adding weaker-signal names — the construction cannot separate those two effects.</p>
   </div>
 
   <div class="version-block">
     <span class="version-label">Version B — top-N approach</span>
     <ol class="step-list">
       <li><span class="step-num">1</span><span>Rank all available portfolios from strongest signal to weakest.</span></li>
-      <li><span class="step-num">2</span><span>Form the most concentrated basket from the top 5 names.</span></li>
-      <li><span class="step-num">3</span><span>Form broader baskets by extending further down the same ranked list — top 10, top 15, top 20 — always starting from name number one.</span></li>
+      <li><span class="step-num">2</span><span>The most concentrated basket holds the top 5 names.</span></li>
+      <li><span class="step-num">3</span><span>Broader baskets hold the top 10, top 15, top 20 — always starting from name number one.</span></li>
     </ol>
-    <p class="version-note">The signal never changes. The top-5 and top-20 baskets draw from the same ranked list in the same order. Only the cutoff moves. This isolates concentration from signal dilution.</p>
+    <p class="version-note">The top-5 and top-20 baskets draw from the same ranked list in the same order. Widening the portfolio adds more names from the same quality tier. The signal never changes. Only the breadth does.</p>
   </div>
 
-  <div class="visual-wrap">
+  <details class="chart-dropdown">
+  <summary class="chart-summary">
+    <span class="chart-summary-title">How the Two Approaches Differ</span>
+    <span class="chart-summary-caption">Use the slider to step through three concentration levels and see what each construction is doing differently.</span>
+    <svg class="chart-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+  </summary>
+  <div class="chart-body">
     <iframe srcdoc="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
 <head>
@@ -1037,15 +631,55 @@ render(1);
 </body>
 </html>
 " style="width:100%;max-width:100%;height:640px;border:none;display:block;" loading="lazy" title="Chart"></iframe>
-    <p class="visual-caption">Interactive — use the slider to step through three concentration levels and see exactly what each construction is doing differently.</p>
   </div>
+</details>
 
   <div class="hr"></div>
 
-  <span class="section-eyebrow">Empirical finding — 1 of 3</span>
-  <p><strong>The floor drops when you concentrate.</strong> Across both signals, both construction methods, and every ten-year window, maximum concentration produced the worst worst-case drawdown. Under a value signal, the most concentrated portfolio's worst decade produced a drawdown of 61.5 percent. The broadest portfolio's worst was 54 percent. A 54 percent drawdown requires a gain of 117 percent to recover. A 61.5 percent drawdown requires 260 percent. The concentrated portfolio did not produce proportionally better returns to justify that gap.</p>
+  <p>Before the numbers mean anything, the method behind them needs a brief introduction.</p>
 
-  <div class="visual-wrap">
+  <div class="factor-intro">
+    <span class="factor-intro-label">A short introduction to the six factors</span>
+    <p>When researchers want to understand where a portfolio's returns came from, they measure it against systematic sources of return that decades of academic work have identified as persistent across markets. These are called factors — consistent characteristics that have historically predicted which stocks outperform and which underperform. Six have survived the most rigorous scrutiny and are now the standard toolkit in academic finance for decomposing portfolio returns. These are the six we tested against.</p>
+    <div class="factor-rows">
+      <div class="factor-row">
+        <span class="factor-tag">Market (Mkt-RF)</span>
+        <span class="factor-desc">The return from being invested in stocks at all, above the risk-free rate. Every equity portfolio loads on this.</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-tag">Size (SMB)</span>
+        <span class="factor-desc">Smaller companies have historically returned more than larger ones over long periods, on average. SMB stands for Small Minus Big.</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-tag">Value (HML)</span>
+        <span class="factor-desc">Stocks trading cheaply relative to their book value have historically outperformed expensive ones. HML stands for High Minus Low.</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-tag">Profitability (RMW)</span>
+        <span class="factor-desc">Companies with stronger operating profitability have historically outperformed weaker ones. RMW stands for Robust Minus Weak.</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-tag">Investment (CMA)</span>
+        <span class="factor-desc">Companies that invest conservatively have historically outperformed those that expand aggressively. CMA stands for Conservative Minus Aggressive.</span>
+      </div>
+      <div class="factor-row">
+        <span class="factor-tag">Momentum (UMD)</span>
+        <span class="factor-desc">Stocks that have performed well recently have historically continued to outperform in the near term. UMD stands for Up Minus Down.</span>
+      </div>
+    </div>
+    <p style="margin-top:14px;">Together, these six form what researchers call the Fama-French five-factor model plus momentum. Whatever return remains after accounting for all six is the alpha — the portion no known systematic factor can explain. That is the number the test was looking for.</p>
+  </div>
+
+  <span class="section-eyebrow">Empirical finding — 1 of 3</span>
+  <p><strong>The floor drops as concentration increases.</strong> Across both signals, both construction methods, and every ten-year window, maximum concentration produced the worst worst-case drawdown. Under a value signal, the most concentrated portfolio's worst decade produced a drawdown of 61.5 percent. The broadest portfolio's worst was 54 percent. A 54 percent drawdown requires a gain of 117 percent to recover. A 61.5 percent drawdown requires 260 percent. The concentrated portfolio did not produce proportionally better returns to justify that gap.</p>
+
+  <details class="chart-dropdown">
+  <summary class="chart-summary">
+    <span class="chart-summary-title">The Gravity of Concentration</span>
+    <span class="chart-summary-caption">Switch between value and momentum signals. Both panels show the same pattern: the most concentrated level always carries the lowest floor.</span>
+    <svg class="chart-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+  </summary>
+  <div class="chart-body">
     <iframe srcdoc="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
 <head>
@@ -1449,13 +1083,21 @@ draw();
 </body>
 </html>
 " style="width:100%;max-width:100%;height:500px;border:none;display:block;" loading="lazy" title="Chart"></iframe>
-    <p class="visual-caption">Switch between value and momentum signals. Both panels show the same finding: the most concentrated level always has the lowest floor.</p>
   </div>
+</details>
 
   <span class="section-eyebrow">Empirical finding — 2 of 3</span>
-  <p><strong>The Sharpe improvement is real, but factor-driven.</strong> Under a value signal, more concentrated portfolios produced better risk-adjusted returns. The most concentrated level posted a median Sharpe of 0.58. The broadest posted 0.52. But once factor exposures were controlled for, alpha at every concentration level was statistically indistinguishable from zero. You are not adding skill. You are adding factor exposure. Those are not the same thing.</p>
+  <p><strong>The Sharpe improvement is real, but the factors explain it.</strong> Under a value signal, more concentrated portfolios produced better risk-adjusted returns. The most concentrated level posted a median Sharpe ratio of 0.58 across ten-year periods. The broadest posted 0.52.</p>
 
-  <div class="visual-wrap">
+  <p>After running each portfolio's returns against the six factors above, the alpha at every concentration level was statistically indistinguishable from zero. The Sharpe improvement came from holding a more concentrated dose of the value factor — and the value factor alone was doing the lifting. Spread wider, and the value exposure dilutes. Concentrate, and it intensifies. The concentration was packaging the factor more purely, rather than generating anything beyond it.</p>
+
+  <details class="chart-dropdown">
+  <summary class="chart-summary">
+    <span class="chart-summary-title">Outcome Spread by Concentration Level</span>
+    <span class="chart-summary-caption">Each dot is one ten-year period. The spread from top to bottom shows how much the result varied depending on which decade you happened to start.</span>
+    <svg class="chart-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+  </summary>
+  <div class="chart-body">
     <iframe srcdoc="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
 <head>
@@ -1589,7 +1231,7 @@ const windowData = {
       [0.690, 0.580, 0.520, 0.500, 0.430, 0.300],    // C4 std=0.13
       [0.740, 0.590, 0.480, 0.460, 0.410, 0.370],    // C5 std=0.13
     ],
-    insight: '<strong>Value signal:</strong> The most concentrated level (C1) shows the widest spread — a best window of 0.93 and a worst of −0.06. That is not a better average. It is a lottery. The moderate and diversified levels produce tighter, more consistent outcomes across all periods.'
+    insight: '<strong>Value signal:</strong> The most concentrated level (C1) shows the widest spread — a best window of 0.93 and a worst of −0.06. The spread in outcomes — best window 0.93, worst window negative 0.06 — shows that maximum concentration under a value signal amplifies the luck of the starting decade far more than it improves the typical result. The moderate and diversified levels produce tighter, more consistent outcomes across all periods.'
   },
   momentum: {
     labels: ['Most\nConcentrated', 'Concentrated', 'Moderate', 'Diversified', 'Broad'],
@@ -1696,13 +1338,25 @@ draw();
 </body>
 </html>
 " style="width:100%;max-width:100%;height:480px;border:none;display:block;" loading="lazy" title="Chart"></iframe>
-    <p class="visual-caption">Each dot is one ten-year period. The bar is the median. The spread of dots is the finding — not the average, the distribution of outcomes.</p>
   </div>
+</details>
 
   <span class="section-eyebrow">Empirical finding — 3 of 3</span>
-  <p><strong>Alpha by period.</strong> Under Version A, maximum momentum concentration showed a statistically significant annualized alpha of 2.2 percent, t-stat 2.38. Under Version B, where only breadth changed, the same level showed 0.17 percent, t-stat 0.21. Two full percentage points of apparent alpha — and the difference between a significant result and noise — were embedded in the methodology, not the market.</p>
+  <p><strong>The momentum premium is sensitive to how the test is built.</strong> This finding matters most for anyone who has read a study recommending momentum concentration.</p>
 
-  <div class="visual-wrap">
+  <p>Under Version A — the construction used in most academic studies — maximum momentum concentration produced an annualized alpha of 2.2 percent after controlling for all six factors, with a t-statistic of 2.38. A t-statistic above 2 is the conventional threshold for statistical significance in academic finance.</p>
+
+  <p>Under Version B — where the signal was held constant and only the number of holdings changed — the same maximum concentration level produced an alpha of 0.17 percent, with a t-statistic of 0.21, well within noise. The construction choice accounts for the entire difference. Roughly two percentage points of apparent annual return, and the statistical significance that made the result publishable, were embedded in the methodology rather than the market.</p>
+
+  <p>The alpha heatmap below shows why this matters beyond the full-sample average. The same concentration level that earned positive alpha in one decade earned negative alpha in another — same strategy, same signal, different outcome depending entirely on when the measurement started. The full-sample average flatters the consistency of the edge.</p>
+
+  <details class="chart-dropdown">
+  <summary class="chart-summary">
+    <span class="chart-summary-title">What Held, and When</span>
+    <span class="chart-summary-caption">Green cells show decades where the concentration level earned returns above what the six factors predicted. Red cells show where it didn't. Hover any cell for the exact number.</span>
+    <svg class="chart-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+  </summary>
+  <div class="chart-body">
     <iframe srcdoc="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
 <head>
@@ -1965,20 +1619,21 @@ draw();
 </body>
 </html>
 " style="width:100%;max-width:100%;height:520px;border:none;display:block;" loading="lazy" title="Chart"></iframe>
-    <p class="visual-caption">Green cells: the level earned something above its factor exposure that decade. Red cells: it didn't. Hover any cell for the exact number.</p>
   </div>
+</details>
 
   <div class="hr"></div>
 
   <p>Our test did not find that concentration reliably outperforms after factor controls. It found three things that held regardless of how the portfolios were built.</p>
 
   <ul class="findings-list">
-    <li><strong>Concentration reliably worsens the worst-case outcome.</strong> In every signal, every construction method, every ten-year window — the floor drops. That result did not move.</li>
-    <li><strong>Apparent return improvements are mostly explained by purer factor exposure, not skill.</strong> Once known factor exposures are controlled for, the premium for concentration above and beyond the factor itself is difficult to find and difficult to sustain.</li>
+    <li><strong>The floor drops as concentration increases.</strong> In every signal, every construction method, every ten-year window — the worst-case outcome worsened at higher concentration levels. That result held across every version of the test.</li>
+    <li><strong>The apparent return improvement is explained by purer factor exposure.</strong> Once the six factors are accounted for, the premium for concentration above and beyond the factor itself is difficult to find and difficult to sustain.</li>
     <li><strong>The studies most often cited to support concentration are more sensitive to construction choices than their conclusions suggest.</strong> Change the methodology and the answer changes. Two percentage points of apparent alpha disappeared when the construction was cleaned up.</li>
   </ul>
 
   <p>None of that means concentration is wrong. It means concentration is a choice that deserves honest accounting — not of the best decade it produced, but of the full distribution of outcomes it generates, and of how much of its apparent edge survives once you strip away the factors it was quietly riding.</p>
+
   <p>That is what the data shows. The rest is a question about yourself.</p>
 
   <!-- FOR THE EMPIRICALLY CURIOUS -->
@@ -2008,9 +1663,7 @@ draw();
       </div>
       <p class="curious-h4">Version comparison — value signal</p>
       <table class="curious-table">
-        <thead>
-          <tr><th>Metric</th><th>Level</th><th>Version A</th><th>Version B</th><th>Delta</th><th>Agree?</th></tr>
-        </thead>
+        <thead><tr><th>Metric</th><th>Level</th><th>Version A</th><th>Version B</th><th>Delta</th><th>Agree?</th></tr></thead>
         <tbody>
           <tr><td>Median Sharpe</td><td>Most concentrated</td><td>0.350</td><td>0.583</td><td>+0.233</td><td class="agree-yes">YES</td></tr>
           <tr><td>Median Sharpe</td><td>Broad</td><td>0.475</td><td>0.520</td><td>+0.045</td><td class="agree-yes">YES</td></tr>
@@ -2030,7 +1683,7 @@ draw();
   </details>
 </section>
 
-<!-- ── WHERE CONCENTRATION EARNS ITS PLACE ── -->
+<!-- WHERE CONCENTRATION EARNS ITS PLACE -->
 <section id="where" class="reveal">
   <span class="section-eyebrow">Section III</span>
   <h2 class="section-title">Where Does Concentration Actually Earn Its Place?</h2>
@@ -2043,7 +1696,7 @@ draw();
     <span class="condition-title">Is the edge genuinely yours?</span>
     <div class="analytical">
       <p>Before deciding how many names to hold, the more important question is whether the signal behind those names is genuinely differentiated — or whether it maps onto something the market already prices systematically.</p>
-      <p>The research showed that many celebrated concentrated managers were, in large part, running factor exposures and calling them conviction. AQR's Quality Minus Junk factor<sup data-cite="Asness, Frazzini & Pedersen (2019). Quality Minus Junk. Review of Accounting Studies.">⁴</sup> shows that many investors who believe they are selecting superior businesses are systematically loading on profitability, low leverage, and earnings stability. The Betting Against Beta factor<sup data-cite="Frazzini & Pedersen (2014). Betting Against Beta. Journal of Financial Economics.">⁵</sup> explains a large share of defensive concentrated portfolios. The q-factor model<sup data-cite="Hou, Xue & Zhang (2015). Digesting Anomalies. Review of Financial Studies.">⁶</sup> and Stambaugh-Yuan mispricing factors<sup data-cite="Stambaugh & Yuan (2017). Mispricing Factors. Review of Financial Studies.">⁷</sup> capture additional return variation that persists after five-factor controls.</p>
+      <p>The research showed that many celebrated concentrated managers were, in large part, running factor exposures and calling them conviction. AQR's Quality Minus Junk factor<sup data-cite="Asness, Frazzini & Pedersen (2019). Quality Minus Junk. Review of Accounting Studies.">⁴</sup> shows that many investors who believe they are selecting superior businesses are systematically loading on profitability, low leverage, and earnings stability. The Betting Against Beta factor<sup data-cite="Frazzini & Pedersen (2014). Betting Against Beta. Journal of Financial Economics.">⁵</sup> explains a large share of defensive concentrated portfolios. The q-factor model<sup data-cite="Hou, Xue & Zhang (2015). Digesting Anomalies. Review of Financial Studies.">⁶</sup> and the Stambaugh-Yuan mispricing factors<sup data-cite="Stambaugh & Yuan (2017). Mispricing Factors. Review of Financial Studies.">⁷</sup> capture additional return variation that persists after five-factor controls.</p>
       <p>If someone removed the market exposure, the size tilt, the value loading, the momentum contribution, and the quality premium from your portfolio's returns — what would be left?</p>
     </div>
 
@@ -2054,11 +1707,17 @@ draw();
 
     <div class="insight-card">
       <span class="card-label">Where genuine edge tends to live</span>
-      <p>Genuine edge beyond factors is narrower than most investors believe. It tends to live where information is genuinely harder to process — <strong>smaller companies with limited analyst coverage</strong>, situations with structural complexity that institutional capital cannot easily access, circumstances where <strong>patience itself is the scarce resource</strong> rather than insight.</p>
+      <p>Genuine edge beyond factors is narrower than most investors believe. It tends to live where information is genuinely harder to process — <strong>smaller companies with limited analyst coverage</strong>, situations with structural complexity that institutional capital cannot easily access, circumstances where <strong>patience itself is the scarce resource</strong> rather than insight. Outside those corners, the premium for concentration above and beyond factor exposure is difficult to find and difficult to sustain.</p>
     </div>
 
-    <div class="visual-wrap">
-      <iframe srcdoc="<!DOCTYPE html>
+    <details class="chart-dropdown">
+  <summary class="chart-summary">
+    <span class="chart-summary-title">What the Factors Explain</span>
+    <span class="chart-summary-caption">Adjust the sliders to reflect your portfolio's exposures. Watch how much return is explained by known factors — and how much, if anything, remains.</span>
+    <svg class="chart-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+  </summary>
+  <div class="chart-body">
+    <iframe srcdoc="<!DOCTYPE html>
 <html lang=&quot;en&quot;>
 <head>
 <meta charset=&quot;UTF-8&quot;>
@@ -2412,8 +2071,8 @@ update();
 </body>
 </html>
 " style="width:100%;max-width:100%;height:580px;border:none;display:block;" loading="lazy" title="Chart"></iframe>
-      <p class="visual-caption">Adjust the sliders to reflect your portfolio's exposures. Watch how much return is explained by known factors — and how much, if anything, remains.</p>
-    </div>
+  </div>
+</details>
 
     <div class="factor-note">
       <p>Factor investing is not a consolation prize for investors who could not pick stocks. It is a systematic, empirically grounded approach with decades of academic validation, lower costs, and more predictable outcomes than most active management.</p>
@@ -2437,7 +2096,7 @@ update();
       <p>This is not a question about risk tolerance in the abstract. Risk tolerance as most people understand it is a number on a questionnaire filled out during a bull market, bearing little relationship to actual behavior when a portfolio is down forty percent and the news is uniformly bad.</p>
       <p>The data showed that the most concentrated portfolios produced worst-case ten-year drawdowns around sixty percent. A sixty percent drawdown requires a subsequent gain of one hundred and fifty percent just to break even. The time that recovery takes, and the psychological weight of watching it unfold, do not appear in any Sharpe ratio.</p>
       <p>The honest stress test is applied to the investor, not the portfolio. Imagine the strategy produces its worst historical period starting from the day you implement it. Not a bad quarter. A bad decade. At the end of that period, are you still invested?</p>
-      <p>There is also a practical dimension that has nothing to do with psychology. If there is any meaningful chance you will need to access this capital within the next decade, then a strategy capable of a sixty percent drawdown is not compatible with that reality. That is not a risk tolerance conversation. It is arithmetic.</p>
+      <p>There is also a practical dimension that has nothing to do with psychology. If there is any meaningful chance you will need to access this capital within the next decade — for a home, for income, for an emergency — then a strategy capable of a sixty percent drawdown is simply incompatible with that reality. The math on a sixty percent drawdown is unforgiving regardless of how you feel about risk.</p>
       <p>The gravity of conviction, applied to a concentrated portfolio, does not discriminate between being right and being wrong. It simply makes both outcomes larger.</p>
     </div>
   </div>
@@ -2447,19 +2106,19 @@ update();
     <span class="condition-title">Do you have the runway?</span>
     <div class="analytical">
       <p>Markets move through extended periods where certain strategies work and others do not. A value approach that produced strong returns through the 1970s and 1980s struggled badly through the late 1990s technology boom, recovered through the 2000s, then struggled again through the 2010s growth cycle. These extended periods — what researchers call regimes — can last a decade or longer, and they are not predictable in advance.</p>
-      <p>We measured momentum concentration across six non-overlapping ten-year periods. In three of those periods, concentrated momentum portfolios produced positive unexplained returns after all factor controls. In the other three, they did not. The investor who began in one of the three bad periods, with a five-year horizon, would have concluded, reasonably but incorrectly, that the edge did not exist.</p>
+      <p>We measured momentum concentration across six non-overlapping ten-year periods. In three of those periods, concentrated momentum portfolios produced positive unexplained returns after all factor controls. In the other three, they did not. The investor who began in one of the three bad periods, with a five-year horizon, would have experienced only underperformance — and would have concluded, reasonably but incorrectly, that the edge did not exist.</p>
       <p>There is a phrase common among systematic traders: <em>trust the process.</em> Our data gives it a specific and defensible meaning. An investor with a genuinely valid, factor-differentiated edge who abandons the strategy mid-cycle is timing out at exactly the wrong moment. The runway simply ran out first.</p>
     </div>
   </div>
 
   <div class="hr"></div>
 
-  <p>Most investors, most of the time, do not meet all three conditions simultaneously. For those investors, broad diversification is not a consolation prize. It is the correct answer.</p>
+  <p>Most investors, most of the time, do not meet all three conditions simultaneously. For those investors, broad diversification is the right answer — and arriving at it through honest self-assessment is more valuable than any concentration strategy that ignores the conditions it requires.</p>
   <p>For the investor who has examined all three conditions honestly and found answers that genuinely support concentration, the data offers something useful: concentration makes the most sense when the signal is clearest and most differentiated from known factor exposures, when the floor is survivable given actual financial circumstances, and when the runway is long enough that regime dependency has time to average out.</p>
   <p>That is a small population. It is not zero. The question the data cannot answer is which population you belong to.</p>
 </section>
 
-<!-- ── KNOWING VS BEING RIGHT ── -->
+<!-- KNOWING VS BEING RIGHT -->
 <section id="knowing" class="reveal">
   <span class="section-eyebrow">Section IV — Case Study</span>
   <h2 class="section-title">Knowing vs Being Right</h2>
@@ -2492,18 +2151,18 @@ update();
   <p>The question factor decomposition forces — how much of this return is genuinely ours, and how much is the factor — was never asked. That question does not guarantee a better outcome. But it changes the conversation about position size. And position size, in the end, was everything.</p>
 </section>
 
-<!-- ── THE BASKET, HONESTLY ── -->
+<!-- THE BASKET, HONESTLY -->
 <section id="basket" class="reveal">
   <span class="section-eyebrow">Closing</span>
   <h2 class="section-title">The Basket, Honestly</h2>
 
   <p>There is a version of this volume that ends with a verdict. Concentrate, or don't. Here is the number of holdings that optimizes your Sharpe ratio. Here is the signal that survives factor controls. Here is the decade to have started.</p>
   <p>That version would be more comfortable to read and less honest to write.</p>
-  <p>What the data showed is not a verdict. It is a map of the terrain — where the argument holds, where it softens, and where it gives way entirely under examination. Three things held across every version of the test:</p>
+  <p>What the data produced is a map of the terrain — where the argument holds, where it softens, and where it gives way entirely under examination. Three things held across every version of the test:</p>
 
   <ul class="closing-findings">
-    <li>The floor drops when you concentrate. In every signal, every construction method, every ten-year window, maximum concentration produced the worst worst-case drawdown. That result did not move.</li>
-    <li>The apparent return improvement is mostly factor exposure wearing a different coat. Once known factor exposures are controlled for, the premium for concentration above and beyond the factor itself is difficult to find and difficult to sustain.</li>
+    <li>The floor drops as concentration increases. In every signal, every construction method, every ten-year window, the worst-case outcome worsened at higher concentration levels. That result held across every version of the test.</li>
+    <li>The apparent return improvement is explained by purer factor exposure. Once the six factors are accounted for, the premium for concentration above and beyond the factor itself is difficult to find and difficult to sustain.</li>
     <li>The premium that survives, where it exists at all, is regime-dependent. It requires more time and more durability than most investors bring to the question — and the investors who run out of runway before the regime turns are indistinguishable, in the moment, from investors who were simply wrong.</li>
   </ul>
 
@@ -2533,16 +2192,12 @@ update();
 </footer>
 
 <script>
-// ── READING RAIL ──────────────────────────────────────────
 const railFill = document.getElementById('rail-fill');
 window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
   railFill.style.height = pct + '%';
 });
 
-// ── RAIL STOP ACTIVE TRACKING ─────────────────────────────
 const sections = [
   document.getElementById('opening'),
   document.getElementById('skill'),
@@ -2557,31 +2212,24 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const idx = sections.indexOf(entry.target);
-      if (idx !== -1) {
-        stops.forEach((s, i) => s.classList.toggle('active', i === idx));
-      }
+      if (idx !== -1) stops.forEach((s,i) => s.classList.toggle('active', i === idx));
     }
   });
 }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
 
 sections.forEach(el => { if (el) observer.observe(el); });
 
-// ── RAIL STOP CLICK NAVIGATION ────────────────────────────
 stops.forEach((stop, i) => {
   stop.addEventListener('click', () => {
     if (sections[i]) sections[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
-// ── SCROLL REVEAL ─────────────────────────────────────────
 const reveals = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('in-view');
-  });
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in-view'); });
 }, { threshold: 0.08 });
 reveals.forEach(el => revealObserver.observe(el));
 </script>
-
 </body>
 </html>
