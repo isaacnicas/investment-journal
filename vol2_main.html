@@ -28,13 +28,15 @@
 }
 
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+
+html, body { overflow-x: hidden; }
 html { scroll-behavior:smooth; }
 
 body {
   background: var(--bg);
   color: var(--ink);
   font-family: 'Inter', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
@@ -1162,7 +1164,7 @@ render(1);
 </script>
 </body>
 </html>
-" style="width:100%;height:660px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
+" style="width:100%;max-width:100%;height:660px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
     <p class="visual-caption">Interactive — use the slider to step through three concentration levels and see exactly what each construction is doing differently.</p>
   </div>
 
@@ -1579,7 +1581,7 @@ draw();
 </script>
 </body>
 </html>
-" style="width:100%;height:520px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
+" style="width:100%;max-width:100%;height:520px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
     <p class="visual-caption">Switch between value and momentum signals. Both panels show the same finding: the most concentrated level always has the lowest floor.</p>
   </div>
 
@@ -1827,7 +1829,7 @@ draw();
 </script>
 </body>
 </html>
-" style="width:100%;height:500px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
+" style="width:100%;max-width:100%;height:500px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
     <p class="visual-caption">Each dot is one ten-year period. The bar is the median. The spread of dots is the finding — not the average, the distribution of outcomes across all periods.</p>
   </div>
 
@@ -2097,7 +2099,7 @@ draw();
 </script>
 </body>
 </html>
-" style="width:100%;height:540px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
+" style="width:100%;max-width:100%;height:540px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
     <p class="visual-caption">Green cells: the level earned something above its factor exposure that decade. Red cells: it didn't. Hover any cell for the exact number. The instability across periods is the finding.</p>
   </div>
 
@@ -2565,7 +2567,7 @@ update();
 </script>
 </body>
 </html>
-" style="width:100%;height:600px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
+" style="width:100%;max-width:100%;height:600px;border:none;border-radius:0 0 6px 6px;display:block;" loading="lazy" title="Chart"></iframe>
       <p class="visual-caption">Adjust the sliders to reflect your portfolio's exposures. Watch how much return is explained by known factors — and how much, if anything, remains as unexplained alpha.</p>
     </div>
 
