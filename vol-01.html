@@ -24,7 +24,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#0F1410;
@@ -37,6 +37,9 @@
     --sage:#8B9D8F;
     --rust:#B5503D;
     --hairline:rgba(242,237,225,0.14);
+    --slate:#7B93A6;
+    --plum:#9A7FA3;
+    --clay:#C08552;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -68,9 +71,10 @@
     display:inline-block;
     white-space:nowrap;
     animation:scroll-left 38s linear infinite;
-    font-family:'JetBrains Mono',monospace;
-    font-size:12.5px;
-    letter-spacing:0.04em;
+    font-family:'Ubuntu Mono', monospace;
+    font-weight:400;
+    font-size:13.5px;
+    letter-spacing:0.02em;
     color:var(--parchment-dim);
   }
   .ticker-track span{margin-right:36px;}
@@ -349,9 +353,11 @@
   }
   .ledger-row + .ledger-row{border-top:1px dashed var(--hairline);}
   .ledger-row .step-no{
-    font-family:'JetBrains Mono',monospace;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-style:italic;
     color:var(--gold);
-    font-size:15px;
+    font-size:17px;
   }
   .ledger-row .step-text{
     font-family:'Fraunces',serif;
@@ -390,8 +396,10 @@
     position:absolute;
     left:0;
     top:14px;
-    font-family:'JetBrains Mono',monospace;
-    font-size:14px;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:16px;
     color:var(--sage);
   }
 
@@ -449,25 +457,27 @@
     margin-top:4px;
   }
   .next-vol .arrow{
-    font-family:'JetBrains Mono',monospace;
+    font-family:'Fraunces',serif;
+    font-weight:500;
     color:var(--sage);
     font-size:22px;
   }
 
   /* ============ CLOSING LINE ============ */
   .closer{
-    text-align:center;
-    padding:54px 0 20px;
+    background:var(--sage);
+    border-radius:2px;
+    padding:28px 30px;
+    margin:48px 0 0;
   }
   .closer p{
     font-family:'Fraunces',serif;
     font-style:italic;
-    font-weight:500;
-    font-size:23px;
-    line-height:1.45;
-    color:var(--gold);
-    max-width:560px;
-    margin:0 auto;
+    font-weight:400;
+    font-size:18px;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0;
   }
 
   /* ============ FOOTER ============ */
@@ -525,7 +535,6 @@
     z-index:41;
   }
   .rail-stop{
-    position:relative;
     width:7px;
     height:7px;
     border-radius:50%;
@@ -698,6 +707,179 @@
     .comp-bar{animation:none;}
   }
 
+  /* ============ MULTIPLES GRID ============ */
+  .multiples-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+    margin:28px 0;
+  }
+  @media (max-width:700px){
+    .multiples-grid{grid-template-columns:1fr;}
+  }
+  .multiple-card{
+    background:var(--ink-card);
+    padding:22px 24px 20px;
+  }
+  .multiple-name{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:18px;
+    color:var(--gold);
+    margin-bottom:4px;
+  }
+  .multiple-formula{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--sage);
+    margin-bottom:12px;
+    display:block;
+  }
+  .multiple-body{
+    font-size:14.5px;
+    color:var(--parchment-dim);
+    line-height:1.6;
+  }
+  .multiple-best{
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid var(--hairline);
+    font-size:13.5px;
+    color:var(--rust);
+  }
+  .multiple-best strong{color:var(--parchment);}
+
+  /* ============ TRANSITION ARROW ============ */
+  .next-arrow-down{
+    text-align:center;
+    font-size:28px;
+    color:var(--gold);
+    margin:6px 0 4px;
+    animation:arrow-bob 1.8s ease-in-out infinite;
+  }
+  @keyframes arrow-bob{
+    0%, 100%{transform:translateY(0); opacity:0.7;}
+    50%{transform:translateY(6px); opacity:1;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .next-arrow-down{animation:none;}
+  }
+  .stage-transition{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:16px;
+    color:var(--gold);
+    text-align:center;
+    margin:36px 0 4px;
+  }
+
+  /* ============ OPTIMIZATION RADAR ============ */
+  .radar-box{
+    margin:28px 0;
+    background:var(--ink-soft);
+    border:1px solid var(--hairline);
+    padding:24px 26px 22px;
+  }
+  .radar-box svg{display:block;width:100%;height:auto;}
+  .radar-shape{
+    fill-opacity:0.16;
+    stroke-width:2;
+    transition:opacity 0.25s ease, fill-opacity 0.25s ease;
+    opacity:0;
+    pointer-events:none;
+  }
+  .radar-shape.active{opacity:1;}
+  .radar-toggles{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:18px;
+    justify-content:center;
+  }
+  .radar-toggle{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:13.5px;
+    letter-spacing:0.01em;
+    padding:11px 16px;
+    border:1px solid var(--hairline);
+    border-radius:20px;
+    background:transparent;
+    color:var(--parchment-dim);
+    cursor:pointer;
+    transition:border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+  .radar-toggle:hover{border-color:var(--gold-soft);}
+  .radar-toggle.on{
+    color:var(--ink);
+    font-weight:600;
+  }
+  .radar-caption{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13.5px;
+    color:var(--sage);
+    text-align:center;
+    margin-top:16px;
+  }
+
+  /* ============ UNIVERSAL TRUTHS GRID ============ */
+  .truths-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+    margin:32px 0;
+  }
+  @media (max-width:700px){
+    .truths-grid{grid-template-columns:1fr;}
+  }
+  .truth-card{
+    background:var(--ink-card);
+    padding:24px 24px 22px;
+  }
+  .truth-investor{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.04em;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .truth-name{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:18px;
+    color:var(--parchment);
+    margin-bottom:4px;
+  }
+  .truth-tag{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--sage);
+    margin-bottom:14px;
+    display:block;
+  }
+  .truth-body{
+    font-size:14.5px;
+    color:var(--parchment-dim);
+    line-height:1.6;
+  }
+  .truth-step{
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid var(--hairline);
+    font-size:13.5px;
+    color:var(--rust);
+  }
+  .truth-step strong{color:var(--parchment);}
+
   /* ============ VALUATION: MOAT GAUGE ============ */
   .moat-box{
     margin:28px 0;
@@ -759,6 +941,13 @@
     font-size:14.5px;
     color:var(--parchment-dim);
     margin-bottom:18px;
+  }
+  .section-pretext{
+    font-family:'Source Serif 4',serif;
+    font-style:italic;
+    font-size:14.5px;
+    color:var(--parchment-dim);
+    margin:0 0 14px;
   }
   .spectrum-labels{
     display:flex;
@@ -1031,10 +1220,11 @@
 <div class="rail-stops" id="railStops">
   <div class="rail-stop" data-target="stage-1"><span class="rail-stop-label">Why plant the tree</span></div>
   <div class="rail-stop" data-target="stage-2"><span class="rail-stop-label">Where ideas come from</span></div>
-  <div class="rail-stop" data-target="stage-3"><span class="rail-stop-label">What counts as low</span></div>
-  <div class="rail-stop" data-target="stage-4"><span class="rail-stop-label">Gut, math, or both</span></div>
-  <div class="rail-stop" data-target="stage-5"><span class="rail-stop-label">Holding on, letting go</span></div>
-  <div class="rail-stop" data-target="stage-6"><span class="rail-stop-label">The framework</span></div>
+  <div class="rail-stop" data-target="stage-3"><span class="rail-stop-label">Why they actually win</span></div>
+  <div class="rail-stop" data-target="stage-4"><span class="rail-stop-label">What counts as low</span></div>
+  <div class="rail-stop" data-target="stage-5"><span class="rail-stop-label">Gut, math, or both</span></div>
+  <div class="rail-stop" data-target="stage-6"><span class="rail-stop-label">Holding on, letting go</span></div>
+  <div class="rail-stop" data-target="stage-7"><span class="rail-stop-label">The framework</span></div>
 </div>
 
 <div class="ticker-outer">
@@ -1071,7 +1261,7 @@
   <div class="reveal">
   <p class="lede">Buy low, sell high. Great advice, if you also have a time machine.</p>
 
-  <p>It's the first thing anyone learns about investing, and the last thing anyone actually masters. Nobody tells you how to know what "low" is until after it's already gone "high." So if that's not a strategy, what is?</p>
+  <p>It's the first thing anyone learns about investing, and the last thing anyone actually masters. Nobody tells you how to know what "low" is until after it's already gone "high." And here's the part that makes it worse: even when you do find good advice, the next legendary investor you read will often tell you the exact opposite, with an equally impressive track record to back it up.</p>
 
   <p>Imagine Buffett, Cathie Wood, Peter Lynch, Jim Simons, Howard Marks, and Stanley Druckenmiller at the same dinner table. Within five minutes they'd disagree about almost everything.</p>
 
@@ -1127,7 +1317,54 @@
     <cite>Warren Buffett</cite>
   </blockquote>
 
-  <p>Six wildly different toolkits — and yet all six are legendary. That's not a coincidence to shrug at. It's a clue. Underneath the different styles, every one of them is a professional noticer of <strong>change</strong>. This series is built on doing exactly what Buffett did, just with six heroes instead of one: stitching their different mechanisms into one usable system. Not chasing a single guru's playbook, but building an all-star team out of investors who'd probably never agree to be on the same team. Nobody passes the ball. Everybody still wins.</p>
+  <p>That's what this series is built on doing, just with six heroes instead of one. But here's the honest question worth asking before we go any further: if they're all legendary, why do they look nothing alike? It's because none of them are playing the same game. Each one is a professional noticer of <strong>change</strong>, optimizing for a completely different variable, and once you actually see the shape of that, on the same axes, at the same time, the rest of this volume gets a lot easier to read.</p>
+
+  <div class="radar-box">
+    <svg viewBox="0 0 700 440" role="img" aria-label="Radar chart comparing six investors across six variables: patience, asymmetry, diversification, early conviction, proximity, and data edge. Each investor's shape points in a different direction, none overlapping or outranking the others.">
+      <title>Six investors, six different optimization targets</title>
+      <desc>An interactive radar chart. Toggling each investor reveals a distinctly shaped hexagon, illustrating that none of them maximize the same combination of variables.</desc>
+
+      <polygon points="350,140 419.3,180 419.3,260 350,300 280.7,260 280.7,180" fill="none" stroke="var(--hairline)" stroke-width="1"/>
+      <polygon points="350,60 488.6,140 488.6,300 350,380 211.4,300 211.4,140" fill="none" stroke="var(--hairline)" stroke-width="1"/>
+      <line x1="350" y1="220" x2="350" y2="60" stroke="var(--hairline)" stroke-width="1"/>
+      <line x1="350" y1="220" x2="488.6" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+      <line x1="350" y1="220" x2="488.6" y2="300" stroke="var(--hairline)" stroke-width="1"/>
+      <line x1="350" y1="220" x2="350" y2="380" stroke="var(--hairline)" stroke-width="1"/>
+      <line x1="350" y1="220" x2="211.4" y2="300" stroke="var(--hairline)" stroke-width="1"/>
+      <line x1="350" y1="220" x2="211.4" y2="140" stroke="var(--hairline)" stroke-width="1"/>
+
+      <text x="350" y="38" text-anchor="middle" font-family="Fraunces, serif" font-weight="500" font-size="12" letter-spacing="0.04em" fill="var(--parchment-dim)">PATIENCE</text>
+      <text x="513" y="135" text-anchor="start" font-family="Fraunces, serif" font-weight="500" font-size="12" letter-spacing="0.04em" fill="var(--parchment-dim)">ASYMMETRY</text>
+      <text x="513" y="320" text-anchor="start" font-family="Fraunces, serif" font-weight="500" font-size="12" letter-spacing="0.04em" fill="var(--parchment-dim)">DIVERSIFICATION</text>
+      <text x="350" y="408" text-anchor="middle" font-family="Fraunces, serif" font-weight="500" font-size="12" letter-spacing="0.04em" fill="var(--parchment-dim)">EARLY CONVICTION</text>
+      <text x="187" y="320" text-anchor="end" font-family="Fraunces, serif" font-weight="500" font-size="12" letter-spacing="0.04em" fill="var(--parchment-dim)">PROXIMITY</text>
+      <text x="187" y="135" text-anchor="end" font-family="Fraunces, serif" font-weight="500" font-size="12" letter-spacing="0.04em" fill="var(--parchment-dim)">DATA EDGE</text>
+
+      <polygon class="radar-shape" data-investor="buffett" points="350,68 398.5,192 405.4,252 350,260 308.4,244 308.4,196" fill="var(--gold)" stroke="var(--gold)"/>
+      <polygon class="radar-shape" data-investor="druckenmiller" points="350,180 481.6,144 377.7,236 350,292 315.4,240 301.5,192" fill="var(--rust)" stroke="var(--rust)"/>
+      <polygon class="radar-shape" data-investor="dalio" points="350,132 391.6,196 481.6,296 350,252 322.3,236 287.6,184" fill="var(--slate)" stroke="var(--slate)"/>
+      <polygon class="radar-shape" data-investor="wood" points="350,172 426.2,176 384.6,240 350,372 301.5,248 308.4,196" fill="var(--plum)" stroke="var(--plum)"/>
+      <polygon class="radar-shape" data-investor="lynch" points="350,140 391.6,196 398.5,248 350,284 218.4,296 315.4,200" fill="var(--clay)" stroke="var(--clay)"/>
+      <polygon class="radar-shape" data-investor="simons" points="350,188 405.4,188 419.3,260 350,260 322.3,236 218.4,144" fill="var(--sage)" stroke="var(--sage)"/>
+    </svg>
+
+    <div class="radar-toggles" id="radarToggles">
+      <button class="radar-toggle" data-investor="buffett" style="--toggle-color:var(--gold);">Buffett</button>
+      <button class="radar-toggle" data-investor="druckenmiller" style="--toggle-color:var(--rust);">Druckenmiller</button>
+      <button class="radar-toggle" data-investor="dalio" style="--toggle-color:var(--slate);">Dalio</button>
+      <button class="radar-toggle" data-investor="wood" style="--toggle-color:var(--plum);">Wood</button>
+      <button class="radar-toggle" data-investor="lynch" style="--toggle-color:var(--clay);">Lynch</button>
+      <button class="radar-toggle" data-investor="simons" style="--toggle-color:var(--sage);">Simons</button>
+    </div>
+    <p class="radar-caption">Tap a name. Watch the shape point somewhere completely different — that's the whole argument.</p>
+  </div>
+
+  <p>Comparing Buffett's patience to Druckenmiller's asymmetry is like asking whether a hammer is better than a tape measure — the question only makes sense once you know what you're building. You can't max out all six variables at once, but you can choose, deliberately, which one matters most for the decision in front of you, and borrow the right tool for that job instead of running everything through the same single lens.</p>
+
+  <p>Buffett's approach, applied to a Wood-style decision, will tell you to wait for cash flows that don't exist yet. Wood's approach, applied to a Buffett-style decision, will tell you to chase volatility a stable business was never built to provide. Neither is wrong. They're just answering different questions.</p>
+
+  <p class="stage-transition">First thing's first.</p>
+  <div class="next-arrow-down" aria-hidden="true">↓</div>
   </div>
 
   <hr class="hr">
@@ -1199,6 +1436,9 @@
   <p>So the market is efficient enough that lazy analysis won't beat it, and inefficient enough that careful work still can. That's not a loophole. That's the entire reason this publication exists.</p>
 
   <p>Your edge isn't beating the market at its own best-covered game. It's choosing where the game is still open — and staying honest about why you, specifically, are looking there.</p>
+
+  <p class="stage-transition">Where to actually look.</p>
+  <div class="next-arrow-down" aria-hidden="true">↓</div>
   </div>
 
   <hr class="hr">
@@ -1207,7 +1447,7 @@
   <span class="running-head">Stage Two</span>
   <h2>Where Ideas Actually Come From</h2>
 
-  <p>Most people search for tips. A friend mentions a ticker, a headline screams a number, and the search ends before it started. The trouble is a tip is a conclusion someone else already reached — by the time it gets to you, a few thousand other people have it too.</p>
+  <p>So where is the game still open? Not in the places everyone else is already looking. Most people search for tips instead. A friend mentions a ticker, a headline screams a number, and the search ends before it started. The trouble is a tip is a conclusion someone else already reached — by the time it gets to you, a few thousand other people have it too.</p>
 
   <div class="signal-box">
     <svg viewBox="0 0 700 140" aria-hidden="true">
@@ -1234,10 +1474,10 @@
       <div class="num">1.</div>
       <div>
         <h3><span class="title-text">Future Change <span class="who">— Cathie Wood</span></span><span class="chev">⌄</span></h3>
-        <p>Wood's whole career is one mission: find the technologies disruptive enough to change how the world works, then own them years before that's obvious — AI, robotics, gene sequencing, energy storage, blockchain. The advantage is real. The danger is that being early and being wrong look identical for years.</p>
+        <p>Wood's whole career is one mission: find the technologies disruptive enough to change how the world works, then own them years before that's obvious. The advantage is real. The danger is that being early and being wrong look identical for years.</p>
         <span class="hint">Tap to expand the practice step</span>
       </div>
-      <div class="expand-body"><div class="inner">In practice, her method is a question, not a hunch: why hasn't this broken through yet? Name the actual blocker — humanoid robots are capped by battery life and hard-to-scale parts, solar EVs are capped by a roof simply being too small to capture enough sun — then ask what has to go right, and who's closest to fixing exactly that.</div></div>
+      <div class="expand-body"><div class="inner">In practice, her method is a question, not a hunch: take today's version of a technology and rigorously research what it could plausibly look like in 20 years, not as a guess, but as a forecast built on the actual trajectory of cost, capability, and adoption. The most important question isn't "is this real?" It's "why is this still 5, 10, or 20 years away?" Name the actual blocker. Then ask who's actively working on resolving exactly that blocker.</div></div>
     </div>
     <div class="specimen" data-specimen>
       <div class="num">2.</div>
@@ -1252,7 +1492,7 @@
       <div class="num">3.</div>
       <div>
         <h3><span class="title-text">Business Change <span class="who">— Carl Icahn</span></span><span class="chev">⌄</span></h3>
-        <p>Revenue accelerating, margins expanding, a turnaround quietly working before the stock believes it. Icahn didn't wait for that turnaround to happen on its own — he bought a large stake in companies with good potential but poor management, then forced the change himself: new leadership, sold-off assets, restructured costs. Unglamorous, spreadsheet-shaped change, engineered rather than spotted.</p>
+        <p>"The news optimizes for attention. Data optimizes for truth." That's the gap Icahn built a career exploiting — he never waited for headlines to confirm a turnaround was happening, because by the time they do, the price has already moved. He bought large stakes in companies with good potential but poor management, then forced the change himself: new leadership, sold-off assets, restructured costs. Unglamorous, spreadsheet-shaped change, engineered rather than spotted.</p>
         <span class="hint">Tap to expand the practice step</span>
       </div>
       <div class="expand-body"><div class="inner">In practice: read the last three quarters back to back. Acceleration shows up in the trend long before it shows up in the headline — and if it isn't showing up yet, ask whether current management is even capable of making it happen.</div></div>
@@ -1279,10 +1519,10 @@
       <div class="num">6.</div>
       <div>
         <h3><span class="title-text">Market Perception Change <span class="who">— Howard Marks</span></span><span class="chev">⌄</span></h3>
-        <p>Nothing about the business changes — only the story the market tells itself does. A solid company misses one quarter, the headlines call it a crisis, and the price falls further than the actual facts justify.</p>
+        <p>Nothing about the business changes — only the story the market tells itself does. A solid company misses one quarter, the crowd decides it's a crisis, and the price falls further than the actual deterioration justifies. The business is the same. The mood around it isn't.</p>
         <span class="hint">Tap to expand the practice step</span>
       </div>
-      <div class="expand-body"><div class="inner">In practice: when the headline is scarier than the 10-K, that gap is the opportunity.</div></div>
+      <div class="expand-body"><div class="inner">In practice: ask whether the price moved because something about the business actually broke, or because everyone simultaneously decided to feel worse about the same set of facts. Sentiment swings faster than fundamentals ever do — that gap is the opportunity.</div></div>
     </div>
     <div class="specimen" data-specimen>
       <div class="num">7.</div>
@@ -1297,25 +1537,127 @@
       <div class="num">8.</div>
       <div>
         <h3><span class="title-text">Data-Detected Change <span class="who">— Jim Simons</span></span><span class="chev">⌄</span></h3>
-        <p>Looks at the other seven and says <em>prove it</em>. Real statistical patterns, invisible to the eye, beat a good story every time.</p>
+        <p>Looks at the other seven and says <em>prove it</em>. Simons hunts for change too, he just finds it in a different place: not in a story or a headline, but as an anomaly buried in the data, a pattern breaking from its usual behavior in a way that's statistically real, whether or not anyone can explain why. The discipline is in how he confirms it. Real statistical patterns repeat. A coincidence doesn't. Simons built Renaissance Technologies on refusing to act until something has shown up again and again, enough times that it stops being a story and starts being a fact.</p>
         <span class="hint">Tap to expand the practice step</span>
       </div>
-      <div class="expand-body"><div class="inner">In practice: ask if your "insight" has happened before. If you can't check, you don't have a pattern — you have a hope.</div></div>
+      <div class="expand-body"><div class="inner">In practice, you don't need a research team to borrow the spirit of this. Best practice for now: let data confirm conviction, not replace it. Before acting on a thesis, check it against something other than your own gut. Free screeners like Finviz or Yahoo Finance's screener let you filter for the actual numbers behind a story, revenue growth, margin trends, insider buying, instead of taking a headline's word for it. TradingView is a good next step once you want to see how a price has actually behaved over time, not just where it sits today. None of this requires code or a finance degree, just the habit of checking the data before trusting the narrative. Once that feels comfortable, there's a deeper layer: quantitative factor modeling, momentum, size, volatility, and simulation-based approaches that funds like Renaissance build entire strategies around. You don't need any of that yet. We'll get into it properly in a future volume.</div></div>
     </div>
   </div>
 
-  <p>None of these investors are predicting anything. They're standing closer to where the change is actually happening.</p>
+  <p>Eight different ways of noticing change, eight different starting points. With that mental toolkit in hand, we can move on to the part that actually matters: the underlying truths that let these different approaches sync into one usable system.</p>
+  <p class="stage-transition">Falling knives and Wall Street's favorite con.</p>
+  <div class="next-arrow-down" aria-hidden="true">↓</div>
   </div>
 
   <hr class="hr">
 
   <div id="stage-3" class="reveal">
   <span class="running-head">Stage Three</span>
+  <h2>Why They Actually Win</h2>
+
+  <p>Every one of these six has biases, blind spots, and at least one famously bad call — Buffett spent years skeptical of tech before Apple became the single most profitable position Berkshire ever held. So if none of them are oracles, what's actually doing the work?</p>
+
+  <p>Not genius. Morgan Housel borrows a line from Napoleon in <em>The Psychology of Money</em> that answers it better than we could — <em>"a military genius is the man who can do the average thing when all those around him are going crazy."</em> Swap "military" for "investing," and below is exactly what that looks like for each of them.</p>
+
+  <div class="truths-grid">
+    <div class="truth-card">
+      <div class="truth-investor">WARREN BUFFETT</div>
+      <div class="truth-name">The Truth: Most People Buy and Sell at the Wrong Time</div>
+      <span class="truth-tag">Temperament beats timing</span>
+      <p class="truth-body">Two mistakes, same root cause. On the way down, loss aversion (people feel a loss roughly twice as intensely as an equivalent gain) pushes investors to sell into a drawdown instead of through one. On the way up, the opposite pole, FOMO, pushes them to grab a falling knife's cheerful cousin: chasing a price that's already run, just because everyone else is buying. Buffett's entire edge is refusing to let either feeling drive the decision. As he's put it plainly, you have to be prepared to watch a stock fall 50% or more and still be comfortable holding it, the same way a farmer doesn't check his land's resale value every morning. His other quiet trick: sometimes the best decision you can make is not to make one. You don't need to act on every opportunity, and you don't need more than a handful of genuinely good businesses to reach your goals.</p>
+      <p class="truth-step"><strong>The step:</strong> before buying anything, write down the drawdown you'd need to sit through without flinching. If you can't name a number, you don't know your own temperament yet, and that's worth finding out before your money does.</p>
+    </div>
+
+    <div class="truth-card">
+      <div class="truth-investor">STANLEY DRUCKENMILLER</div>
+      <div class="truth-name">The Truth: Being Right Often Isn't the Same as Making Money</div>
+      <span class="truth-tag">Asymmetry beats accuracy</span>
+      <p class="truth-body">Most people, and most investing advice, quietly optimize for win rate, being right as often as possible. Druckenmiller has said directly that being right or wrong matters less than how much you make when you're right and how much you lose when you're wrong. You can be correct 40% of the time and still come out far ahead, if your wins are sized for it and your losses are capped.</p>
+      <p class="truth-step"><strong>The step:</strong> stop scoring yourself on how often you're right. Score yourself on the ratio between your average win and your average loss instead.</p>
+    </div>
+
+    <div class="truth-card">
+      <div class="truth-investor">CATHIE WOOD</div>
+      <div class="truth-name">The Truth: Humans Can't Intuitively Picture Exponential Growth</div>
+      <span class="truth-tag">Early beats accurate</span>
+      <p class="truth-body">This one has a name: exponential growth bias, the well-documented tendency to mentally flatten a doubling curve into a straight line, confirmed in studies even among highly numerate people. It's why most observers miss disruptive technologies until they're already mainstream. Wood's process is built specifically to fight this, tracking cost-decline curves (the same logic behind Wright's Law) to estimate when an emerging technology's price will fall enough to unlock the next wave of demand, before the growth is obvious to anyone glancing at a chart.</p>
+      <p class="truth-step"><strong>The step:</strong> when a trend looks "too early to matter," check whether its underlying cost or adoption curve is doubling on a schedule. If it is, your gut is almost certainly underestimating it.</p>
+    </div>
+
+    <div class="truth-card">
+      <div class="truth-investor">PETER LYNCH</div>
+      <div class="truth-name">The Truth: Wall Street Is Structurally Far From the Ground</div>
+      <span class="truth-tag">Proximity beats credentials</span>
+      <p class="truth-body">Professional analysts mostly encounter a business through spreadsheets and earnings calls, not the store itself. Lynch's edge wasn't a sharper model, it was literal physical proximity: noticing a product everyone around him was suddenly buying, long before that showed up in anyone's research note. He was explicit that ordinary investors have a real structural advantage here, not a sentimental one.</p>
+      <p class="truth-step"><strong>The step:</strong> the things you notice in your own daily life, genuinely, repeatedly, are data. Write them down before you forget you noticed them at all.</p>
+    </div>
+
+    <div class="truth-card">
+      <div class="truth-investor">HOWARD MARKS</div>
+      <div class="truth-name">The Truth: Price and Value Are Not the Same Number</div>
+      <span class="truth-tag">Value beats price</span>
+      <p class="truth-body">It sounds almost too obvious to state, until you watch how often "it's down a lot" gets treated as a reason to buy, all by itself. Marks' whole career is built on the distinction between what something costs and what it's worth, and on the discipline to ask which one moved when a price changes. A falling price tells you nothing about value on its own. It only tells you that the crowd's opinion shifted.</p>
+      <p class="truth-step"><strong>The step:</strong> every time a price moves sharply, ask explicitly whether the business changed or only the opinion of it did. Those call for opposite reactions.</p>
+    </div>
+
+    <div class="truth-card">
+      <div class="truth-investor">JIM SIMONS</div>
+      <div class="truth-name">The Truth: A Good Story Is Not the Same as a Repeating Pattern</div>
+      <span class="truth-tag">Repetition beats narrative</span>
+      <p class="truth-body">Humans are wired to find causal stories compelling, even in pure noise, that's the entire premise of narrative bias. Simons built Renaissance Technologies on the opposite instinct: ignore the story entirely, and trust only what shows up again and again in the data, regardless of whether anyone can explain why. It's the least romantic edge on this list, and one of the most quietly devastating.</p>
+      <p class="truth-step"><strong>The step:</strong> when you catch yourself explaining <em>why</em> a trade should work, ask separately whether you've actually seen it work before, more than once, under different conditions.</p>
+    </div>
+  </div>
+
+  <p>Six different facts. None of them require six different talents, just six different decisions to take one plain truth seriously and act on it past the point where it stopped feeling clever. That's the actual takeaway: you don't need to be a genius to use any single one of these. You need to actually apply it, consistently, on the days it's inconvenient.</p>
+
+  <p>And here, finally, is why the dinner table doesn't end in a fistfight. They're not competing for the same insight. Buffett isn't trying to out-asymmetry Druckenmiller, and Simons isn't trying to out-proximity Lynch. Each one has quietly claimed a different corner of the same truth, and none of those corners overlap enough to fight over. Six people, six non-overlapping blind spots fixed. That's not a coincidence. That's the actual reason this dinner table works: nobody there needs to be wrong for anybody else to be right.</p>
+
+  <p class="stage-transition">Why nobody buys 47 watermelons.</p>
+  <div class="next-arrow-down" aria-hidden="true">↓</div>
+  </div>
+
+  <hr class="hr">
+
+  <div id="stage-4" class="reveal">
+  <span class="running-head">Stage Four</span>
   <h2>So What Counts as "Low"?</h2>
 
-  <p>Back to the question from the top: nobody tells you how to know what "low" is until after it's already gone "high." Here's the honest answer — you don't know it from the price alone. You know it by comparing the price to two other things: what similar businesses cost, and how defensible this one actually is.</p>
+  <p>Let's be honest about something first: if you're not a math person, investing has an uncomfortable habit of pretending that's optional. For the average investor, on a normal day, you do not buy 47 watermelons, calculate a 17% tip in your head, or split a dinner bill three ways without at least one person pulling out their phone, squinting at the screen like they're decoding ancient runes. And then you're handed a stock ticker and somehow expected to instantly know what "cheap" means. But we're in luck, because you don't need differential equations to start a successful investing journey. You need about four ideas, explained simply, and the discipline to actually use them.</p>
 
-  <p>Start with the boring part. A <strong>P/E ratio</strong> — price divided by earnings — is just a translator. It converts "the stock costs $90" into "you're paying 19 times what the company earns per share each year," which is the number that's actually comparable across companies. A $90 stock and a $9 stock can be priced identically once you do this; a $90 stock can also be the cheaper one. Price alone tells you nothing. The multiple tells you something.</p>
+  <p>Back to the question from the top: nobody tells you how to know what "low" is until after it's already gone "high." Here's the honest answer — you don't know it from the price alone. You know it by comparing the price to what similar businesses cost, how defensible the business actually is, and how much room you've left yourself for being wrong. Four blocks, four ideas, no math degree required.</p>
+
+  <div class="multiples-grid">
+    <div class="multiple-card">
+      <div class="multiple-name">P/E Ratio</div>
+      <span class="multiple-formula">Price ÷ Earnings per share</span>
+      <p class="multiple-body">A translator, nothing more. It converts "the stock costs $90" into "you're paying 19 times what the company earns per share each year," the number that's actually comparable across companies. A $90 stock and a $9 stock can be priced identically once you do this; a $90 stock can also be the cheaper one.</p>
+      <p class="multiple-best"><strong>Best for:</strong> a fast first comparison between similar, profitable companies in the same industry.</p>
+    </div>
+
+    <div class="multiple-card">
+      <div class="multiple-name">PEG Ratio</div>
+      <span class="multiple-formula">P/E ÷ expected earnings growth rate</span>
+      <p class="multiple-body">P/E's correction for growth-blindness. A P/E of 30 on a company growing 30% a year produces a PEG of 1.0, traditionally read as fair value. That same P/E of 30 on a company growing only 10% a year produces a PEG of 3.0, a much pricier story wearing the exact same multiple.</p>
+      <p class="multiple-best"><strong>Best for:</strong> comparing a fast grower against a slow one without being fooled by the sticker price.</p>
+    </div>
+
+    <div class="multiple-card">
+      <div class="multiple-name">Margin of Safety</div>
+      <span class="multiple-formula">(Estimated value − Price) ÷ Estimated value</span>
+      <p class="multiple-body">Buffett's own definition is the simplest one: buying a dollar of value for fifty cents. You estimate what a business is actually worth, then only buy if the price sits well below that, usually 20 to 30% below, so your own mistakes have room to be wrong in without costing you the principal.</p>
+      <p class="multiple-best"><strong>Best for:</strong> literally every purchase, as the safety net underneath whichever other multiple you used.</p>
+    </div>
+
+    <div class="multiple-card">
+      <div class="multiple-name">Price-to-Book</div>
+      <span class="multiple-formula">Price ÷ Net assets per share</span>
+      <p class="multiple-body">Instead of comparing price to profit, this compares price to what the company would be worth if it sold everything it owns and paid off every debt today. A P/B under 1 means you're paying less than the company's own assets are stated to be worth on paper.</p>
+      <p class="multiple-best"><strong>Best for:</strong> asset-heavy businesses, banks, insurers, manufacturers, where physical assets and loans dominate the balance sheet. Far less useful for software or brand-driven companies, where most of the real value never shows up on the balance sheet at all.</p>
+    </div>
+  </div>
+
+  <p>None of these is a verdict on its own, each is a different angle on the same honest question. Here's what that question looks like with an actual chart attached to it.</p>
 
   <div class="comp-box">
     <svg viewBox="0 0 700 200" role="img" aria-label="Bar chart comparing the P/E multiple of a subject company against four industry peers, with the subject company priced noticeably lower">
@@ -1351,7 +1693,7 @@
     <p class="comp-caption">Illustrative. Same industry, same growth ballpark — and the gold bar costs less for every dollar of earnings.</p>
   </div>
 
-  <p>That gap is interesting. It is not, on its own, a reason to buy. A lower multiple sometimes means "cheap." It sometimes means "cheap for a reason" — worse management, a shrinking market, a balance sheet held together with tape. The only way to tell the two apart is the question underneath all of this: why does this business get to keep charging what it charges, and for how long?</p>
+  <p>That gap is interesting. It is not, on its own, a reason to buy. A lower multiple sometimes means "cheap." It sometimes means "cheap for a reason," what investors call a <strong>value trap</strong>: shrinking revenue, a balance sheet held together with debt, a business correctly priced for trouble rather than mistakenly overlooked. The only way to tell the two apart is the question underneath all of this: why does this business get to keep charging what it charges, and for how long?</p>
 
   <div class="moat-box">
     <span class="moat-tag">The Moat Check</span>
@@ -1374,15 +1716,18 @@
     <p class="moat-note">A moat isn't one big wall — it's usually two or three of these, working together, that make it expensive for a competitor to take the customer away.</p>
   </div>
 
-  <p>Put the two together and the cheap-multiple question gets an actual answer. A low P/E next to a real moat is a genuine signal — the market is mispricing a business that can defend its margins for years. A low P/E next to a weak moat is usually just an accurate price on a business that's about to get squeezed. Same number, opposite conclusion. The multiple tells you where to look. The moat tells you what you're allowed to conclude once you're there.</p>
+  <p>Put the two together and the cheap-multiple question gets an actual answer. A low P/E next to a real moat is a genuine signal — the market is mispricing a business that can defend its margins for years. A low P/E next to a weak moat is usually just an accurate price on a business that's about to get squeezed. Same number, opposite conclusion. The multiple tells you where to look. The moat tells you what you're allowed to conclude once you're there. And the margin of safety is what protects you on the days you got that conclusion wrong anyway.</p>
 
-  <p>That's the actual strategy hiding behind "buy low, sell high": not predicting the bottom, but pricing a business honestly against its peers and its defenses, then buying when the market hasn't bothered to do the same homework.</p>
+  <p>One last thing worth saying plainly: "buy low, sell high" is one perfectly good strategy. It is not the only one. Sometimes the better trade is buy high, sell higher, riding a price that's already moving rather than waiting for a discount that never comes. That's a different game with different rules, momentum and trend-following among them, and we'll get into that toolkit properly in a future issue.</p>
+
+  <p class="stage-transition">From a feeling to a number.</p>
+  <div class="next-arrow-down" aria-hidden="true">↓</div>
   </div>
 
   <hr class="hr">
 
-  <div id="stage-4" class="reveal">
-  <span class="running-head">Stage Four</span>
+  <div id="stage-5" class="reveal">
+  <span class="running-head">Stage Five</span>
   <h2>Getting In: Gut, Math, or Both</h2>
 
   <p>An idea is not an investment — it's an invitation to investigate. Once it survives that, the next question is sizing.</p>
@@ -1392,7 +1737,16 @@
     <cite>The spirit of Stanley Druckenmiller's sizing philosophy</cite>
   </blockquote>
 
-  <p>If you've done the work and you're right, timidity is its own mistake. The opposite pole is the Kelly Criterion — pure math, sizing the bet off your edge, no gut involved. Most disciplined investors live in the middle: starter position, then scale up once the thesis confirms. You earn the right to go big by being right first.</p>
+  <p>If you've done the work and you're right, timidity is its own mistake. But going to the opposite extreme — betting everything on a high-conviction idea — runs into a problem that mathematics worked out long before most investors thought to ask.</p>
+
+  <p>In the 1960s, Ed Thorp — mathematician, blackjack player, and the founder of what many consider the first true quantitative hedge fund — took a formula derived by Bell Labs scientist John Kelly and applied it directly to financial markets. The Kelly Criterion asks a simple question: given your edge and the odds, what fraction of your capital should you bet? The answer is precise: bet size equals edge divided by odds. Bet more than this fraction and your long-run growth rate actually falls, even with a genuine edge. Bet much more and you risk ruin. The mathematics doesn't care how confident you feel.</p>
+
+  <blockquote>
+    <p>"The Kelly formula tells you how to get rich. The half-Kelly tells you how to get rich without the stress."</p>
+    <cite>Ed Thorp, A Man for All Markets</cite>
+  </blockquote>
+
+  <p>Most disciplined investors live somewhere between the Druckenmiller end — size matches conviction — and the Kelly end — size matches math. The practical middle ground is a starter position that earns your attention, scaled up only once the thesis confirms. You earn the right to go big by being right first. Half-Kelly is the professional default for exactly the reason Thorp described: the full Kelly maximizes long-run growth in theory, but the variance is brutal. Half-Kelly gives up a small amount of growth in exchange for a dramatically smoother ride.</p>
 
   <div class="spectrum">
     <p class="spectrum-pretext">Drag the slider to find where your own sizing instinct actually sits.</p>
@@ -1410,12 +1764,15 @@
     <span class="tag">The Munger Inversion</span>
     <p>Before sizing anything, don't ask why this works. Ask what would make it a disaster. If you can't answer that, you understand the pitch, not the investment.</p>
   </div>
+
+  <p class="stage-transition">Now you have to actually live with it.</p>
+  <div class="next-arrow-down" aria-hidden="true">↓</div>
   </div>
 
   <hr class="hr">
 
-  <div id="stage-5" class="reveal">
-  <span class="running-head">Stage Five</span>
+  <div id="stage-6" class="reveal">
+  <span class="running-head">Stage Six</span>
   <h2>Holding On, and Letting Go</h2>
 
   <p>Passive, hands-off investing beats most active strategies long-term — that's not controversial, it's one of the best-documented facts in finance. Drag the slider below and watch what "long-term" actually costs an active stock-picker.</p>
@@ -1459,7 +1816,7 @@
   <div class="callout good">
     <span class="tag">Real Reasons</span>
     <p><strong>The thesis broke.</strong> You bought because of a specific, statable reason — accelerating revenue, a turnaround, a misunderstood story. If that reason is no longer true, the position has nothing left holding it up except your reluctance to admit it.</p>
-    <p><strong>The position outgrew its risk budget.</strong> A stock that doubled or tripled isn't the same size decision it was at purchase. Trimming back to your original sizing isn't losing faith — it's the position-sizing discipline from Stage Four, applied after the fact instead of before.</p>
+    <p><strong>The position outgrew its risk budget.</strong> A stock that doubled or tripled isn't the same size decision it was at purchase. Trimming back to your original sizing isn't losing faith — it's the position-sizing discipline from Stage Five, applied after the fact instead of before.</p>
     <p><strong>Something better showed up.</strong> Capital is finite. A mediocre holding competing against a stronger new idea isn't entitled to keep its seat just because it's already there.</p>
   </div>
 
@@ -1480,15 +1837,18 @@
   <p>Which is exactly backwards from what the math wants — cut losses fast, let winners run — advice everyone can recite and almost no one follows. People sell winners early to lock in a good feeling and hold losers forever waiting for vindication. The disposition effect has a name precisely because it's nearly universal, not because it's rare.</p>
 
   <p>Here's the inversion worth sitting with: you wouldn't buy your worst-performing position today at today's price, knowing what you now know. If that's true, holding it isn't a decision — it's just the absence of one.</p>
+
+  <p class="stage-transition">Time to staple it all together.</p>
+  <div class="next-arrow-down" aria-hidden="true">↓</div>
   </div>
 
   <hr class="hr">
 
-  <div id="stage-6" class="reveal">
+  <div id="stage-7" class="reveal">
   <span class="running-head">The Synthesis</span>
   <h2>The Journal Framework</h2>
 
-  <p>Strip away the six different personalities and the eight different sources, and the underlying process looks the same every time.</p>
+  <p>Strip away the dozen-plus personalities and the eight different sources, and the underlying process looks the same every time.</p>
 
   <div class="ledger">
     <div class="ledger-head">
@@ -1506,13 +1866,12 @@
     </div>
   </div>
 
-  <p>Buffett claims he's never made a decision based on emotion. Superhuman discipline, or a flattering memory — doesn't matter, the aspiration's the point. Every stage above is really the same fight: narrative bias hunting ideas, overconfidence or underconfidence sizing them, loss aversion holding them, recency bias deciding when the wave's already crested.</p>
-
-  <p>Catching a wave early — Wood buying BTC and NVDA years before either was consensus — isn't mystical. It's a belief, backed by research, sized with conviction once the thesis firmed up, held through volatility because nothing broke. Four stages, working at once.</p>
+  <p>That's the whole loop, and none of it requires being a genius or picking just one hero to follow. You now have a working toolkit built from six very different minds, which means you're already better equipped than most people who walk into the market with a single guru and a gut feeling. Use it patiently, and let it get better with every volume.</p>
   </div>
 
   <hr class="hr">
 
+  <p class="section-pretext">Before the close, the five lines worth actually remembering:</p>
   <h2>Key Takeaways</h2>
   <ul class="takeaways">
     <li>Tips are conclusions other people already reached. Developments are raw material nobody's finished using yet.</li>
@@ -1527,7 +1886,7 @@
     <p>Pick one of the eight sources above and find a single piece of concrete evidence of it in the real world — not a stock, not a ticker, just one thing that's shifted and hasn't fully shown up in a price yet. Write it down. That sentence is the seed of every great investment anyone has ever made.</p>
   </div>
 
-  <a class="next-vol" href="https://isaacnicas.github.io/investment-journal/vol2_main.html">
+  <a class="next-vol" href="https://isaacnicas.github.io/investment-journal/vol-02.html">
     <div>
       <span class="label">Up Next — Vol. 02</span>
       <h4>Eggs, Baskets, and Other Casualties</h4>
@@ -1544,7 +1903,7 @@
 </div>
 
 <footer>
-  <p>The Journal of Investment Philosophy — Vol. 01. Not financial advice. Just philosophy that occasionally makes you money.</p>
+  <p>The Journal of Investment Philosophy — Vol. 01. Not financial advice. Just philosophy for thinking about markets.</p>
 </footer>
 
 <script>
@@ -1598,6 +1957,33 @@
   seats.forEach(function(seat){
     seat.addEventListener('click', function(){
       seat.classList.toggle('flipped');
+    });
+  });
+
+  var radarToggles = Array.prototype.slice.call(document.querySelectorAll('.radar-toggle'));
+  var radarShapes = {};
+  Array.prototype.slice.call(document.querySelectorAll('.radar-shape')).forEach(function(shape){
+    radarShapes[shape.getAttribute('data-investor')] = shape;
+  });
+  function setToggleState(btn, on){
+    if(on){
+      btn.classList.add('on');
+      btn.style.background = btn.style.getPropertyValue('--toggle-color');
+      btn.style.borderColor = btn.style.getPropertyValue('--toggle-color');
+    } else {
+      btn.classList.remove('on');
+      btn.style.background = 'transparent';
+      btn.style.borderColor = '';
+    }
+  }
+  radarToggles.forEach(function(btn){
+    var key = btn.getAttribute('data-investor');
+    setToggleState(btn, true);
+    if(radarShapes[key]){ radarShapes[key].classList.add('active'); }
+    btn.addEventListener('click', function(){
+      var isOn = btn.classList.contains('on');
+      setToggleState(btn, !isOn);
+      if(radarShapes[key]){ radarShapes[key].classList.toggle('active', !isOn); }
     });
   });
 
