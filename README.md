@@ -4,7 +4,7 @@ A recurring publication distilling lessons from history's greatest investors int
 
 **Live site:** https://isaacnicas.github.io/investment-journal/
 
-## Contents
+## Contents:  
 
 - `index.html` — landing page listing all volumes
 - `vol-01.html` — Volume 01: *Hidden in Plain Sight*
